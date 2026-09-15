@@ -11,6 +11,12 @@ class OrderTool:
             self.tracking_data = json.load(f)
 
     def track_order(self, order_id: str):
+        if not order_id or not str(order_id).strip():
+            return {
+                "success": False,
+                "needs_clarification": True,
+                "message": "Please share your order ID (e.g. ORD-1011) or tracking ID (e.g. TRK-1001).",
+            }
         order_id = order_id.strip().upper()
         
         # Check if the user passed a tracking ID instead of an order ID

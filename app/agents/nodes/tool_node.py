@@ -7,6 +7,42 @@ from app.common.custom_exception import CustomException
 
 logger = get_logger(__name__)
 
+# tool_name -> (state key, prompt when the ID is missing)
+_REQUIRED_IDS: dict[str, tuple[str, str]] = {
+    "track_order": (
+        "order_id",
+        "Please share your order ID (e.g. ORD-1011) or tracking ID (e.g. TRK-1001) so I can look it up.",
+    ),
+    "cancel_order": (
+        "order_id",
+        "Please share the order ID you want to cancel (e.g. ORD-1011).",
+    ),
+    "check_return_eligibility": (
+        "order_id",
+        "Please share your order ID (e.g. ORD-1011) so I can check return eligibility.",
+    ),
+    "check_ticket_status": (
+        "ticket_id",
+        "Please share your support ticket ID (e.g. T-3001).",
+    ),
+    "get_ticket": (
+        "ticket_id",
+        "Please share your support ticket ID (e.g. T-3001).",
+    ),
+    "get_user": (
+        "user_id",
+        "Please share your user ID (e.g. user_7) or the email on your account.",
+    ),
+}
+
+
+def _normalize_id(value: str | None) -> str | None:
+    if value is None:
+        return None
+    stripped = str(value).strip()
+    return stripped or None
+
+
 class ToolNode:
     
     
@@ -20,6 +56,19 @@ class ToolNode:
         try:
             tool_name = state["tool_name"]
             logger.info(f"ToolNode executing: {tool_name}")
+
+            if tool_name in _REQUIRED_IDS:
+                field, clarify_message = _REQUIRED_IDS[tool_name]
+                if _normalize_id(state.get(field)) is None:
+                    logger.info(f"ToolNode skipped {tool_name}: missing {field}")
+                    return {
+                        "tool_result": {
+                            "success": False,
+                            "needs_clarification": True,
+                            "message": clarify_message,
+                        },
+                        "action": "clarify",
+                    }
 
             if tool_name == "track_order":
                 result = self.order_tool.track_order(state["order_id"])
