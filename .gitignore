@@ -37,6 +37,13 @@ MANIFEST
 ehthumbs.db
 Thumbs.db
 
+# Internal Documentation & Notes
+docs/
+scratch/
+SYSTEM_ARCHITECTURE.md
+web/AGENTS.md
+web/CLAUDE.md
+
 # Project Specific
 artifacts/
 dump.rdb
@@ -67,3 +74,4 @@ tests/node_eval_results.json
 .idea/
 *.swp
 *.swo
+
