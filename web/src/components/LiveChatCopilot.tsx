@@ -123,18 +123,7 @@ export default function LiveChatCopilot() {
       }).catch(() => null);
 
       if (!res || !res.ok) {
-        res = await fetch('http://127.0.0.1:8000/chat', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'X-Thread-ID': threadId,
-          },
-          body: JSON.stringify({ ticket: q, thread_id: threadId }),
-        });
-      }
-
-      if (!res.ok) {
-        throw new Error(`Server returned HTTP ${res.status}`);
+        throw new Error(`Chat API error: ${res?.status ?? 'No response'}`);
       }
 
       const reader = res.body?.getReader();
