@@ -18,30 +18,28 @@ class QdrantDB:
             self.vector_size = vector_size
 
             logger.info("Connecting to Qdrant...")
-
             self.client = QdrantClient(url=self.qdrant_url, api_key=self.api_key)
-
             logger.info("Connected successfully.")
 
         except Exception as e:
-            logger.error("Failed to connect to Qdrant.")
+            logger.error(f"Failed to connect to Qdrant: {e}")
             raise CustomException(e)
 
     def collection_exists_with_data(self) -> bool:
+        """Check if target collection exists and contains vectors.
+        Uses single-collection API to work with collection-scoped API keys.
+        """
         try:
-            collections = [c.name for c in self.client.get_collections().collections]
-            if self.collection_name not in collections:
-                return False
+            self.client.get_collection(collection_name=self.collection_name)
             count = self.client.count(collection_name=self.collection_name).count
             return count > 0
-        except Exception:
+        except Exception as e:
+            logger.warning(f"Collection check for '{self.collection_name}': {e}")
             return False
 
     def create_collection(self):
         try:
-            collections = [c.name for c in self.client.get_collections().collections]
-
-            if self.collection_name not in collections:
+            if not self.collection_exists_with_data():
                 logger.info(f"Creating collection '{self.collection_name}'...")
                 self.client.create_collection(
                     collection_name=self.collection_name,
@@ -49,11 +47,10 @@ class QdrantDB:
                 )
                 logger.info("Collection created.")
             else:
-                logger.info("Collection already exists.")
+                logger.info(f"Collection '{self.collection_name}' already exists with data.")
 
         except Exception as e:
-            logger.error("Failed to create collection.")
-            raise CustomException(e)
+            logger.warning(f"Could not create collection (may already exist or scoped key): {e}")
 
     def upload_document(self, documents, embedding_model):
         try:

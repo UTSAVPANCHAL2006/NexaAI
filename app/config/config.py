@@ -21,12 +21,12 @@ RESOLVED_TICKETS_FILE = (
 CHUNK_SIZE=500
 CHUNK_OVERLAP = 100
 
-EMBEDDING_MODEL = "BAAI/bge-small-en-v1.5"
+EMBEDDING_MODEL = "BAAI/bge-base-en-v1.5"
 
 QDRANT_URL        = os.getenv("QDRANT_URL", "http://localhost:6333")
 QDRANT_API_KEY    = os.getenv("QDRANT_API_KEY", None)
-QDRANT_COLLECTION = os.getenv("QDRANT_COLLECTION", "banking_support_v2")
-VECTOR_SIZE       = 384
+QDRANT_COLLECTION = os.getenv("QDRANT_COLLECTION", "banking_support")
+VECTOR_SIZE       = 768
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
