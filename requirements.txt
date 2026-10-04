@@ -2,9 +2,8 @@ langchain
 langchain-community
 langchain-core
 langchain-openai
-langchain-huggingface
+fastembed
 langchain-qdrant
-sentence_transformers
 rank-bm25
 langfuse
 langgraph
