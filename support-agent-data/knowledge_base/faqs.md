@@ -1,101 +1,84 @@
-# FAQs
+# Banking FAQs
 
-## Shipping
+## Accounts and balance
 
-**Q: How long does standard shipping take?**
-A: Standard shipping takes 5-7 business days. Free on orders over $50, otherwise $4.99.
+**How do I check my balance?**  
+Share your account ID (e.g. ACC-1001) after verification; balance is available via account services and mobile app.
 
-**Q: How long does express shipping take?**
-A: Express shipping takes 2-3 business days and costs $12.99.
+**What is average monthly balance (AMB)?**  
+AMB is the average of daily closing balances in a month; falling below required AMB may attract fees per schedule of charges.
 
-**Q: Do you ship internationally?**
-A: Yes, to over 40 countries. International delivery takes 10-15 business days, rates vary by country.
+**Can I open an account online?**  
+Yes, savings account via video KYC subject to eligibility; complete document upload if prompted.
 
-**Q: When does my order ship?**
-A: Orders placed before 2 PM ship the same business day.
+**What is a dormant account?**  
+No customer-initiated transaction for 24 months; reactivation requires KYC update at branch or digital re-KYC.
 
-**Q: How do I track my order?**
-A: Use the "Track Order" button in your account, or provide your order ID to support.
+## Cards
 
-**Q: Can I change my shipping address after ordering?**
-A: Yes, if the order hasn't shipped yet. Contact support with your order ID.
+**My card is not working — what should I check?**  
+Verify card status (active/blocked), daily limit, international toggle, and sufficient account balance for debit cards.
 
-**Q: My order shows delivered but I never received it. What do I do?**
-A: Contact support with your order ID — we'll file a claim with the carrier and either reship or refund.
+**How do I block my card?**  
+Provide last 4 digits; blocking is immediate via app or support.
 
-**Q: Which carriers do you use?**
-A: We use FedEx, UPS, and local couriers for last-mile delivery.
+**How long does replacement take?**  
+5-7 business days to registered address; track status in the app.
 
-## Returns & Refunds
+**Why was my contactless payment declined?**  
+Amount may exceed contactless limit; use PIN insert or check if card is blocked.
 
-**Q: What is your return policy?**
-A: Items can be returned within 30 days of delivery if unused and in original packaging.
+## UPI and payments
 
-**Q: How long do refunds take?**
-A: Refunds are processed within 5-7 business days after we receive the returned item.
+**My UPI failed but money was debited?**  
+Wait 24-48 hours for auto-reversal; if not reversed, raise dispute with UTR.
 
-**Q: Can I exchange an item instead of returning it?**
-A: Yes, exchanges are allowed within the 30-day window, subject to stock availability.
+**What is UTR?**  
+Unique Transaction Reference — use it to track UPI/NEFT/IMPS status.
 
-**Q: What items can't be returned?**
-A: Perishables, digital goods, and personalized items are non-returnable.
+**Can I increase UPI limit?**  
+Limits depend on KYC tier and profile; request limit enhancement via app (subject to approval).
 
-**Q: My return window has passed, can I still return it?**
-A: Exceptions are evaluated case by case — contact support with your order details.
+**NEFT is pending — how long?**  
+Usually up to 2 hours; beyond 48 hours contact support with reference number.
 
-**Q: How do I start a return?**
-A: Go to Order History > Select Order > Start Return, or ask support with your order ID.
+## KYC
 
-**Q: Where does my refund get sent?**
-A: Refunds go to your original payment method.
+**What is KYC pending?**  
+Submit missing documents listed in KYC profile for full limits.
 
-## Billing & Payments
+**How long does KYC verification take?**  
+2-3 business days after complete document submission.
 
-**Q: What payment methods do you accept?**
-A: Credit/debit cards, PayPal, and UPI.
+**Can I operate account with partial KYC?**  
+Yes, with reduced transaction limits until full KYC.
 
-**Q: I was charged twice for one order. What happened?**
-A: This is usually a temporary authorization hold. If it doesn't resolve in 3 days, contact support with both transaction IDs.
+## Disputes and fraud
 
-**Q: How do I cancel my subscription?**
-A: Go to Account > Billing > Manage Subscription > Cancel. Must be done 24 hours before renewal to avoid the next charge.
+**How do I raise a dispute?**  
+Provide transaction ID or UTR, amount, date; a case ID will be assigned.
 
-**Q: Can I get an invoice for my order?**
-A: Yes, from Account > Billing History > Download Invoice.
+**What is provisional credit?**  
+Temporary credit during card fraud investigation; may be reversed if fraud not confirmed.
 
-**Q: Do you offer discounts for students or bulk orders?**
-A: Students get 10% off with a valid student email. Bulk orders over 20 units get 15% off.
+**I shared OTP by mistake — what now?**  
+Call fraud helpline immediately, block cards and net banking, change passwords.
 
-**Q: My payment failed but I was still charged. What now?**
-A: This is a temporary hold that reverses automatically in 2-3 business days. Contact support if it persists.
+## Fees
 
-## Account & Security
+**Are UPI transfers free?**  
+Yes for most retail customers on digital channels.
 
-**Q: How do I reset my password?**
-A: Go to Account Settings > Security > Reset Password. A reset link will be emailed to you.
+**Why was maintenance charge debited?**  
+AMB not maintained; see charges and fees policy for slabs.
 
-**Q: How do I enable two-factor authentication?**
-A: Go to Account Settings > Security > 2FA and follow the setup steps.
+## General
 
-**Q: I'm locked out of my account. What do I do?**
-A: Use the "Forgot Password" flow, or contact support for identity verification if that doesn't work.
+**What are banking hours for branch?**  
+Typically 10:00 AM – 4:00 PM Monday to Friday; digital channels 24x7 except maintenance.
 
-**Q: How do I delete my account and data?**
-A: Contact support or email privacy@company.com to request deletion — processed within 48 hours.
+**How do I update mobile number?**  
+Branch visit or video KYC with ID proof; OTP on old number if still active.
 
-**Q: Can I change the email linked to my account?**
-A: Yes, from Account Settings > Profile > Update Email. You'll need to verify the new email.
-
-## Technical
-
-**Q: The app keeps crashing. What should I do?**
-A: Try clearing the app cache and updating to the latest version. If it persists, contact support.
-
-**Q: I can't apply my promo code. Why?**
-A: Check the code hasn't expired and meets minimum order requirements. Some codes are single-use per account.
-
-**Q: Checkout isn't working for me. What can I try?**
-A: Try a different browser or payment method, and clear your cache. Contact support if the issue continues.
-
-**Q: How do I update my payment method on file?**
-A: Go to Account Settings > Payment Methods > Add/Edit.
+**Where can I download account statement?**  
+Internet banking and mobile app: statements up to 12 months in PDF.

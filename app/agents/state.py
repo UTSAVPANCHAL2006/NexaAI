@@ -15,6 +15,8 @@ class Agentstate(TypedDict):
     documents : list[Document]
     tool_result: dict
     response : str
-    order_id: str | None
-    ticket_id: str | None
+    account_id: str | None
+    case_id: str | None
     user_id: str | None
+    card_last4: str | None
+    txn_id: str | None

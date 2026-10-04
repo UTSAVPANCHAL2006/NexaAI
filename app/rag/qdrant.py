@@ -5,15 +5,6 @@ from langchain_qdrant import QdrantVectorStore
 from app.common.logger import get_logger
 from app.common.custom_exception import CustomException
 
-from app.config.config import (
-        KB_DIR, RESOLVED_TICKETS_FILE, OUTPUT_PATH,
-        CHUNK_SIZE, CHUNK_OVERLAP, EMBEDDING_MODEL,
-        QDRANT_URL, QDRANT_API_KEY, QDRANT_COLLECTION, VECTOR_SIZE
-    )
-from app.rag.loader import Loader
-from app.rag.chunk import Chunker
-from app.rag.embedding import Embedding
-
 logger = get_logger(__name__)
 
 
@@ -85,25 +76,3 @@ class QdrantDB:
         except Exception as e:
             logger.error("Failed to upload documents.")
             raise CustomException(e)
-
-
-if __name__ == "__main__":
-
-    loader = Loader(kb_path=KB_DIR, resolved_path=RESOLVED_TICKETS_FILE, output_path=OUTPUT_PATH)
-    docs = loader.load_all_documents()
-
-    chunk = Chunker(chunk_size=CHUNK_SIZE, chunk_overlap=CHUNK_OVERLAP)
-    chunks = chunk.create_text_chunks(docs)
-
-    embedding = Embedding(model_name=EMBEDDING_MODEL)
-    embedding_model = embedding.get_embedding()
-
-    qdrant = QdrantDB(
-        qdrant_url=QDRANT_URL,
-        collection_name=QDRANT_COLLECTION,
-        vector_size=VECTOR_SIZE,
-        api_key=QDRANT_API_KEY,
-    )
-
-    qdrant.create_collection()
-    qdrant.upload_document(documents=chunks, embedding_model=embedding_model)

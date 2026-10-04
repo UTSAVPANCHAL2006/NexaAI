@@ -52,6 +52,6 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
                     "retry_after_seconds": seconds_left
                 }
             )
-
+        
         # everything is fine, pass the request through
         return await call_next(request)

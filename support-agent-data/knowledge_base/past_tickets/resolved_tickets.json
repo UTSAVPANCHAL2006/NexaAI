@@ -1,1223 +1,366 @@
 [
   {
-    "ticket_id": "T-1000",
-    "category": "shipping",
-    "issue": "Order ORD-2000 stuck in 'processing' for 2 days, customer asking for update.",
-    "resolution": "Warehouse delay confirmed, reshipped item at no cost.",
+    "ticket_id": "CASE-R0001",
+    "category": "card",
+    "issue": "Customer reported card issue on account ACC-1002.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0001.",
     "tags": [
-      "shipping"
+      "card",
+      "banking"
+    ],
+    "urgency": "medium",
+    "sentiment": "negative",
+    "order_id": "ACC-1002"
+  },
+  {
+    "ticket_id": "CASE-R0002",
+    "category": "kyc",
+    "issue": "Customer reported kyc issue on account ACC-1003.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0002.",
+    "tags": [
+      "kyc",
+      "banking"
+    ],
+    "urgency": "high",
+    "sentiment": "positive",
+    "order_id": "ACC-1003"
+  },
+  {
+    "ticket_id": "CASE-R0003",
+    "category": "dispute",
+    "issue": "Customer reported dispute issue on account ACC-1004.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0003.",
+    "tags": [
+      "dispute",
+      "banking"
     ],
     "urgency": "low",
     "sentiment": "neutral",
-    "order_id": "ORD-2000"
+    "order_id": "ACC-1004"
   },
   {
-    "ticket_id": "T-1001",
-    "category": "technical",
-    "issue": "Customer's app crashes when uploading a large image.",
-    "resolution": "Identified bug in checkout module, escalated to engineering, workaround given: clear browser cache.",
+    "ticket_id": "CASE-R0004",
+    "category": "upi",
+    "issue": "Customer reported upi issue on account ACC-1005.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0004.",
     "tags": [
-      "technical"
+      "upi",
+      "banking"
     ],
     "urgency": "medium",
-    "sentiment": "neutral",
-    "order_id": "ORD-2001"
+    "sentiment": "negative",
+    "order_id": "ACC-1005"
   },
   {
-    "ticket_id": "T-1002",
-    "category": "technical",
-    "issue": "Customer unable to log in on the app/website.",
-    "resolution": "Walked customer through updating the app to the latest version, issue resolved.",
-    "tags": [
-      "technical"
-    ],
-    "urgency": "low",
-    "sentiment": "angry",
-    "order_id": "ORD-2002"
-  },
-  {
-    "ticket_id": "T-1003",
+    "ticket_id": "CASE-R0005",
     "category": "account",
-    "issue": "Customer locked out of account, suspicious login flagged their account.",
-    "resolution": "Verified identity, reset password and re-enabled 2FA.",
+    "issue": "Customer reported account issue on account ACC-1006.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0005.",
     "tags": [
-      "account"
-    ],
-    "urgency": "medium",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2003"
-  },
-  {
-    "ticket_id": "T-1004",
-    "category": "shipping",
-    "issue": "Customer says package marked delivered but never arrived for order ORD-2004.",
-    "resolution": "Filed claim with carrier, issued full refund.",
-    "tags": [
-      "shipping"
-    ],
-    "urgency": "medium",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2004"
-  },
-  {
-    "ticket_id": "T-1005",
-    "category": "technical",
-    "issue": "Customer's app crashes when opening the checkout page.",
-    "resolution": "Identified bug in payments gateway, escalated to engineering, workaround given: retry after app update.",
-    "tags": [
-      "technical"
-    ],
-    "urgency": "medium",
-    "sentiment": "angry",
-    "order_id": "ORD-2005"
-  },
-  {
-    "ticket_id": "T-1006",
-    "category": "billing",
-    "issue": "Customer's subscription renewed after they thought they cancelled.",
-    "resolution": "Confirmed cancellation request was submitted late, refunded this cycle as goodwill.",
-    "tags": [
-      "billing"
+      "account",
+      "banking"
     ],
     "urgency": "high",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2006"
+    "sentiment": "positive",
+    "order_id": "ACC-1006"
   },
   {
-    "ticket_id": "T-1007",
-    "category": "shipping",
-    "issue": "Order ORD-2007 stuck in 'awaiting pickup' for 4 days, customer asking for update.",
-    "resolution": "Warehouse delay confirmed, upgraded to express shipping as goodwill.",
+    "ticket_id": "CASE-R0006",
+    "category": "transaction",
+    "issue": "Customer reported transaction issue on account ACC-1007.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0006.",
     "tags": [
-      "shipping"
-    ],
-    "urgency": "low",
-    "sentiment": "angry",
-    "order_id": "ORD-2007"
-  },
-  {
-    "ticket_id": "T-1008",
-    "category": "shipping",
-    "issue": "Order ORD-2008 stuck in 'packed' for 35 days, customer asking for update.",
-    "resolution": "Warehouse delay confirmed, issued full refund.",
-    "tags": [
-      "shipping"
-    ],
-    "urgency": "low",
-    "sentiment": "angry",
-    "order_id": "ORD-2008"
-  },
-  {
-    "ticket_id": "T-1009",
-    "category": "account",
-    "issue": "Customer locked out of account, suspicious login flagged their account.",
-    "resolution": "Verified identity, unlocked account after confirming recent activity.",
-    "tags": [
-      "account"
-    ],
-    "urgency": "medium",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2009"
-  },
-  {
-    "ticket_id": "T-1010",
-    "category": "technical",
-    "issue": "Customer unable to log in on the app/website.",
-    "resolution": "Walked customer through using a different payment method, issue resolved.",
-    "tags": [
-      "technical"
-    ],
-    "urgency": "high",
-    "sentiment": "angry",
-    "order_id": "ORD-2010"
-  },
-  {
-    "ticket_id": "T-1011",
-    "category": "returns",
-    "issue": "Customer received wrong item for order ORD-2011, wants a desk lamp instead.",
-    "resolution": "Confirmed error, sent correct item via express shipping, no return needed for original.",
-    "tags": [
-      "returns",
-      "eligible"
+      "transaction",
+      "banking"
     ],
     "urgency": "low",
     "sentiment": "neutral",
-    "order_id": "ORD-2011"
+    "order_id": "ACC-1007"
   },
   {
-    "ticket_id": "T-1012",
-    "category": "shipping",
-    "issue": "Customer says package marked delivered but never arrived for order ORD-2012.",
-    "resolution": "Filed claim with carrier, reshipped item at no cost.",
+    "ticket_id": "CASE-R0007",
+    "category": "card",
+    "issue": "Customer reported card issue on account ACC-1008.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0007.",
     "tags": [
-      "shipping"
-    ],
-    "urgency": "low",
-    "sentiment": "angry",
-    "order_id": "ORD-2012"
-  },
-  {
-    "ticket_id": "T-1013",
-    "category": "technical",
-    "issue": "Customer unable to apply a promo code on the app/website.",
-    "resolution": "Walked customer through using a different payment method, issue resolved.",
-    "tags": [
-      "technical"
+      "card",
+      "banking"
     ],
     "urgency": "medium",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2013"
+    "sentiment": "negative",
+    "order_id": "ACC-1008"
   },
   {
-    "ticket_id": "T-1014",
-    "category": "returns",
-    "issue": "Customer received wrong item for order ORD-2014, wants a jacket instead.",
-    "resolution": "Confirmed error, sent correct item via express shipping, no return needed for original.",
+    "ticket_id": "CASE-R0008",
+    "category": "kyc",
+    "issue": "Customer reported kyc issue on account ACC-1009.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0008.",
     "tags": [
-      "returns",
-      "eligible"
+      "kyc",
+      "banking"
     ],
     "urgency": "high",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2014"
+    "sentiment": "positive",
+    "order_id": "ACC-1009"
   },
   {
-    "ticket_id": "T-1015",
-    "category": "billing",
-    "issue": "Customer charged twice for order ORD-2015.",
-    "resolution": "Verified duplicate charge via transaction IDs, refunded extra charge within 4 business days.",
+    "ticket_id": "CASE-R0009",
+    "category": "dispute",
+    "issue": "Customer reported dispute issue on account ACC-1010.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0009.",
     "tags": [
-      "billing"
-    ],
-    "urgency": "low",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2015"
-  },
-  {
-    "ticket_id": "T-1016",
-    "category": "billing",
-    "issue": "Customer's subscription renewed after they thought they cancelled.",
-    "resolution": "Confirmed cancellation request was submitted late, refunded this cycle as goodwill.",
-    "tags": [
-      "billing"
-    ],
-    "urgency": "high",
-    "sentiment": "angry",
-    "order_id": "ORD-2016"
-  },
-  {
-    "ticket_id": "T-1017",
-    "category": "billing",
-    "issue": "Customer's subscription renewed after they thought they cancelled.",
-    "resolution": "Confirmed cancellation request was submitted late, refunded this cycle as goodwill.",
-    "tags": [
-      "billing"
-    ],
-    "urgency": "high",
-    "sentiment": "neutral",
-    "order_id": "ORD-2017"
-  },
-  {
-    "ticket_id": "T-1018",
-    "category": "billing",
-    "issue": "Customer charged twice for order ORD-2018.",
-    "resolution": "Verified duplicate charge via transaction IDs, refunded extra charge within 7 business days.",
-    "tags": [
-      "billing"
-    ],
-    "urgency": "high",
-    "sentiment": "angry",
-    "order_id": "ORD-2018"
-  },
-  {
-    "ticket_id": "T-1019",
-    "category": "shipping",
-    "issue": "Customer says package marked delivered but never arrived for order ORD-2019.",
-    "resolution": "Filed claim with carrier, upgraded to express shipping as goodwill.",
-    "tags": [
-      "shipping"
-    ],
-    "urgency": "low",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2019"
-  },
-  {
-    "ticket_id": "T-1020",
-    "category": "account",
-    "issue": "Customer wants to delete their account and data.",
-    "resolution": "Processed deletion request per privacy policy, confirmed via email within 48 hours.",
-    "tags": [
-      "account"
-    ],
-    "urgency": "medium",
-    "sentiment": "angry",
-    "order_id": "ORD-2020"
-  },
-  {
-    "ticket_id": "T-1021",
-    "category": "account",
-    "issue": "Customer locked out of account, forgot password and lost access to recovery email.",
-    "resolution": "Verified identity, restored access after identity verification.",
-    "tags": [
-      "account"
-    ],
-    "urgency": "high",
-    "sentiment": "neutral",
-    "order_id": "ORD-2021"
-  },
-  {
-    "ticket_id": "T-1022",
-    "category": "shipping",
-    "issue": "Customer says package marked delivered but never arrived for order ORD-2022.",
-    "resolution": "Filed claim with carrier, reshipped item at no cost.",
-    "tags": [
-      "shipping"
-    ],
-    "urgency": "low",
-    "sentiment": "angry",
-    "order_id": "ORD-2022"
-  },
-  {
-    "ticket_id": "T-1023",
-    "category": "account",
-    "issue": "Customer locked out of account, forgot password and lost access to recovery email.",
-    "resolution": "Verified identity, reset password and re-enabled 2FA.",
-    "tags": [
-      "account"
+      "dispute",
+      "banking"
     ],
     "urgency": "low",
     "sentiment": "neutral",
-    "order_id": "ORD-2023"
+    "order_id": "ACC-1010"
   },
   {
-    "ticket_id": "T-1024",
-    "category": "account",
-    "issue": "Customer locked out of account, suspicious login flagged their account.",
-    "resolution": "Verified identity, reset password and re-enabled 2FA.",
+    "ticket_id": "CASE-R0010",
+    "category": "upi",
+    "issue": "Customer reported upi issue on account ACC-1011.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0010.",
     "tags": [
-      "account"
-    ],
-    "urgency": "low",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2024"
-  },
-  {
-    "ticket_id": "T-1025",
-    "category": "returns",
-    "issue": "Customer wants to return a blender bought 12 days ago, wrong size ordered.",
-    "resolution": "Approved \u2014 within 30-day return window. Return label issued, refund initiated after item received.",
-    "tags": [
-      "returns",
-      "eligible"
-    ],
-    "urgency": "low",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2025"
-  },
-  {
-    "ticket_id": "T-1026",
-    "category": "shipping",
-    "issue": "Customer says package marked delivered but never arrived for order ORD-2026.",
-    "resolution": "Filed claim with carrier, upgraded to express shipping as goodwill.",
-    "tags": [
-      "shipping"
+      "upi",
+      "banking"
     ],
     "urgency": "medium",
-    "sentiment": "angry",
-    "order_id": "ORD-2026"
+    "sentiment": "negative",
+    "order_id": "ACC-1011"
   },
   {
-    "ticket_id": "T-1027",
-    "category": "technical",
-    "issue": "Customer's app crashes when switching payment methods.",
-    "resolution": "Identified bug in image upload service, escalated to engineering, workaround given: retry after app update.",
+    "ticket_id": "CASE-R0011",
+    "category": "account",
+    "issue": "Customer reported account issue on account ACC-1012.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0011.",
     "tags": [
-      "technical"
+      "account",
+      "banking"
     ],
     "urgency": "high",
-    "sentiment": "neutral",
-    "order_id": "ORD-2027"
+    "sentiment": "positive",
+    "order_id": "ACC-1012"
   },
   {
-    "ticket_id": "T-1028",
-    "category": "returns",
-    "issue": "Customer received wrong item for order ORD-2028, wants a office chair instead.",
-    "resolution": "Confirmed error, sent correct item via express shipping, no return needed for original.",
+    "ticket_id": "CASE-R0012",
+    "category": "transaction",
+    "issue": "Customer reported transaction issue on account ACC-1013.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0012.",
     "tags": [
-      "returns",
-      "eligible"
-    ],
-    "urgency": "high",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2028"
-  },
-  {
-    "ticket_id": "T-1029",
-    "category": "shipping",
-    "issue": "Order ORD-2029 stuck in 'awaiting pickup' for 20 days, customer asking for update.",
-    "resolution": "Warehouse delay confirmed, replacement dispatched next day.",
-    "tags": [
-      "shipping"
-    ],
-    "urgency": "high",
-    "sentiment": "angry",
-    "order_id": "ORD-2029"
-  },
-  {
-    "ticket_id": "T-1030",
-    "category": "billing",
-    "issue": "Customer charged twice for order ORD-2030.",
-    "resolution": "Verified duplicate charge via transaction IDs, refunded extra charge within 4 business days.",
-    "tags": [
-      "billing"
-    ],
-    "urgency": "high",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2030"
-  },
-  {
-    "ticket_id": "T-1031",
-    "category": "billing",
-    "issue": "Customer charged twice for order ORD-2031.",
-    "resolution": "Verified duplicate charge via transaction IDs, refunded extra charge within 3 business days.",
-    "tags": [
-      "billing"
+      "transaction",
+      "banking"
     ],
     "urgency": "low",
     "sentiment": "neutral",
-    "order_id": "ORD-2031"
+    "order_id": "ACC-1013"
   },
   {
-    "ticket_id": "T-1032",
-    "category": "billing",
-    "issue": "Customer's subscription renewed after they thought they cancelled.",
-    "resolution": "Confirmed cancellation request was submitted late, refunded this cycle as goodwill.",
+    "ticket_id": "CASE-R0013",
+    "category": "card",
+    "issue": "Customer reported card issue on account ACC-1014.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0013.",
     "tags": [
-      "billing"
-    ],
-    "urgency": "high",
-    "sentiment": "angry",
-    "order_id": "ORD-2032"
-  },
-  {
-    "ticket_id": "T-1033",
-    "category": "returns",
-    "issue": "Customer wants to return a backpack bought 7 days ago, changed their mind.",
-    "resolution": "Approved \u2014 within 30-day return window. Return label issued, refund initiated after item received.",
-    "tags": [
-      "returns",
-      "eligible"
-    ],
-    "urgency": "high",
-    "sentiment": "angry",
-    "order_id": "ORD-2033"
-  },
-  {
-    "ticket_id": "T-1034",
-    "category": "technical",
-    "issue": "Customer's app crashes when applying a coupon code.",
-    "resolution": "Identified bug in coupon engine, escalated to engineering, workaround given: use a different card.",
-    "tags": [
-      "technical"
-    ],
-    "urgency": "high",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2034"
-  },
-  {
-    "ticket_id": "T-1035",
-    "category": "technical",
-    "issue": "Customer's app crashes when uploading a large image.",
-    "resolution": "Identified bug in image upload service, escalated to engineering, workaround given: use the mobile site instead of the app temporarily.",
-    "tags": [
-      "technical"
-    ],
-    "urgency": "low",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2035"
-  },
-  {
-    "ticket_id": "T-1036",
-    "category": "billing",
-    "issue": "Customer charged twice for order ORD-2036.",
-    "resolution": "Verified duplicate charge via transaction IDs, refunded extra charge within 7 business days.",
-    "tags": [
-      "billing"
+      "card",
+      "banking"
     ],
     "urgency": "medium",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2036"
+    "sentiment": "negative",
+    "order_id": "ACC-1014"
   },
   {
-    "ticket_id": "T-1037",
-    "category": "returns",
-    "issue": "Customer wants to return a office chair bought 23 days ago, wrong size ordered.",
-    "resolution": "Approved \u2014 within 30-day return window. Return label issued, refund initiated after item received.",
+    "ticket_id": "CASE-R0014",
+    "category": "kyc",
+    "issue": "Customer reported kyc issue on account ACC-1015.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0014.",
     "tags": [
-      "returns",
-      "eligible"
+      "kyc",
+      "banking"
     ],
-    "urgency": "medium",
-    "sentiment": "angry",
-    "order_id": "ORD-2037"
+    "urgency": "high",
+    "sentiment": "positive",
+    "order_id": "ACC-1015"
   },
   {
-    "ticket_id": "T-1038",
-    "category": "returns",
-    "issue": "Customer received wrong item for order ORD-2038, wants a smartwatch instead.",
-    "resolution": "Confirmed error, sent correct item via express shipping, no return needed for original.",
+    "ticket_id": "CASE-R0015",
+    "category": "dispute",
+    "issue": "Customer reported dispute issue on account ACC-1016.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0015.",
     "tags": [
-      "returns",
-      "eligible"
+      "dispute",
+      "banking"
     ],
     "urgency": "low",
     "sentiment": "neutral",
-    "order_id": "ORD-2038"
+    "order_id": "ACC-1016"
   },
   {
-    "ticket_id": "T-1039",
+    "ticket_id": "CASE-R0016",
+    "category": "upi",
+    "issue": "Customer reported upi issue on account ACC-1017.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0016.",
+    "tags": [
+      "upi",
+      "banking"
+    ],
+    "urgency": "medium",
+    "sentiment": "negative",
+    "order_id": "ACC-1017"
+  },
+  {
+    "ticket_id": "CASE-R0017",
     "category": "account",
-    "issue": "Customer locked out of account, 2FA device was lost.",
-    "resolution": "Verified identity, restored access after identity verification.",
+    "issue": "Customer reported account issue on account ACC-1018.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0017.",
     "tags": [
-      "account"
+      "account",
+      "banking"
     ],
     "urgency": "high",
-    "sentiment": "angry",
-    "order_id": "ORD-2039"
+    "sentiment": "positive",
+    "order_id": "ACC-1018"
   },
   {
-    "ticket_id": "T-1040",
-    "category": "returns",
-    "issue": "Customer wants to return wireless earbuds bought 23 days ago, not as described.",
-    "resolution": "Approved \u2014 within 30-day return window. Return label issued, refund initiated after item received.",
+    "ticket_id": "CASE-R0018",
+    "category": "transaction",
+    "issue": "Customer reported transaction issue on account ACC-1019.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0018.",
     "tags": [
-      "returns",
-      "eligible"
-    ],
-    "urgency": "medium",
-    "sentiment": "angry",
-    "order_id": "ORD-2040"
-  },
-  {
-    "ticket_id": "T-1041",
-    "category": "shipping",
-    "issue": "Order ORD-2041 stuck in 'packed' for 14 days, customer asking for update.",
-    "resolution": "Warehouse delay confirmed, reshipped item at no cost.",
-    "tags": [
-      "shipping"
-    ],
-    "urgency": "low",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2041"
-  },
-  {
-    "ticket_id": "T-1042",
-    "category": "account",
-    "issue": "Customer wants to delete their account and data.",
-    "resolution": "Processed deletion request per privacy policy, confirmed via email within 48 hours.",
-    "tags": [
-      "account"
-    ],
-    "urgency": "medium",
-    "sentiment": "angry",
-    "order_id": "ORD-2042"
-  },
-  {
-    "ticket_id": "T-1043",
-    "category": "shipping",
-    "issue": "Customer says package marked delivered but never arrived for order ORD-2043.",
-    "resolution": "Filed claim with carrier, issued full refund.",
-    "tags": [
-      "shipping"
-    ],
-    "urgency": "low",
-    "sentiment": "angry",
-    "order_id": "ORD-2043"
-  },
-  {
-    "ticket_id": "T-1044",
-    "category": "technical",
-    "issue": "Customer's app crashes when uploading a large image.",
-    "resolution": "Identified bug in image upload service, escalated to engineering, workaround given: clear browser cache.",
-    "tags": [
-      "technical"
-    ],
-    "urgency": "medium",
-    "sentiment": "neutral",
-    "order_id": "ORD-2044"
-  },
-  {
-    "ticket_id": "T-1045",
-    "category": "billing",
-    "issue": "Customer's subscription renewed after they thought they cancelled.",
-    "resolution": "Confirmed cancellation request was submitted late, refunded this cycle as goodwill.",
-    "tags": [
-      "billing"
-    ],
-    "urgency": "high",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2045"
-  },
-  {
-    "ticket_id": "T-1046",
-    "category": "technical",
-    "issue": "Customer's app crashes when applying a coupon code.",
-    "resolution": "Identified bug in coupon engine, escalated to engineering, workaround given: use a different card.",
-    "tags": [
-      "technical"
-    ],
-    "urgency": "low",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2046"
-  },
-  {
-    "ticket_id": "T-1047",
-    "category": "technical",
-    "issue": "Customer unable to reset their password on the app/website.",
-    "resolution": "Walked customer through updating the app to the latest version, issue resolved.",
-    "tags": [
-      "technical"
-    ],
-    "urgency": "medium",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2047"
-  },
-  {
-    "ticket_id": "T-1048",
-    "category": "account",
-    "issue": "Customer locked out of account, suspicious login flagged their account.",
-    "resolution": "Verified identity, unlocked account after confirming recent activity.",
-    "tags": [
-      "account"
-    ],
-    "urgency": "high",
-    "sentiment": "angry",
-    "order_id": "ORD-2048"
-  },
-  {
-    "ticket_id": "T-1049",
-    "category": "technical",
-    "issue": "Customer's app crashes when opening the checkout page.",
-    "resolution": "Identified bug in payments gateway, escalated to engineering, workaround given: retry after app update.",
-    "tags": [
-      "technical"
-    ],
-    "urgency": "high",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2049"
-  },
-  {
-    "ticket_id": "T-1050",
-    "category": "billing",
-    "issue": "Customer charged twice for order ORD-2050.",
-    "resolution": "Verified duplicate charge via transaction IDs, refunded extra charge within 6 business days.",
-    "tags": [
-      "billing"
+      "transaction",
+      "banking"
     ],
     "urgency": "low",
     "sentiment": "neutral",
-    "order_id": "ORD-2050"
+    "order_id": "ACC-1019"
   },
   {
-    "ticket_id": "T-1051",
-    "category": "returns",
-    "issue": "Customer received wrong item for order ORD-2051, wants running shoes instead.",
-    "resolution": "Confirmed error, sent correct item via express shipping, no return needed for original.",
+    "ticket_id": "CASE-R0019",
+    "category": "card",
+    "issue": "Customer reported card issue on account ACC-1020.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0019.",
     "tags": [
-      "returns",
-      "denied"
+      "card",
+      "banking"
     ],
     "urgency": "medium",
-    "sentiment": "angry",
-    "order_id": "ORD-2051"
+    "sentiment": "negative",
+    "order_id": "ACC-1020"
   },
   {
-    "ticket_id": "T-1052",
-    "category": "account",
-    "issue": "Customer wants to delete their account and data.",
-    "resolution": "Processed deletion request per privacy policy, confirmed via email within 48 hours.",
+    "ticket_id": "CASE-R0020",
+    "category": "kyc",
+    "issue": "Customer reported kyc issue on account ACC-1021.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0020.",
     "tags": [
-      "account"
+      "kyc",
+      "banking"
     ],
-    "urgency": "medium",
-    "sentiment": "angry",
-    "order_id": "ORD-2052"
+    "urgency": "high",
+    "sentiment": "positive",
+    "order_id": "ACC-1021"
   },
   {
-    "ticket_id": "T-1053",
-    "category": "shipping",
-    "issue": "Order ORD-2053 stuck in 'awaiting pickup' for 11 days, customer asking for update.",
-    "resolution": "Warehouse delay confirmed, reshipped item at no cost.",
+    "ticket_id": "CASE-R0021",
+    "category": "dispute",
+    "issue": "Customer reported dispute issue on account ACC-1022.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0021.",
     "tags": [
-      "shipping"
-    ],
-    "urgency": "medium",
-    "sentiment": "angry",
-    "order_id": "ORD-2053"
-  },
-  {
-    "ticket_id": "T-1054",
-    "category": "account",
-    "issue": "Customer locked out of account, 2FA device was lost.",
-    "resolution": "Verified identity, reset password and re-enabled 2FA.",
-    "tags": [
-      "account"
+      "dispute",
+      "banking"
     ],
     "urgency": "low",
     "sentiment": "neutral",
-    "order_id": "ORD-2054"
+    "order_id": "ACC-1022"
   },
   {
-    "ticket_id": "T-1055",
+    "ticket_id": "CASE-R0022",
+    "category": "upi",
+    "issue": "Customer reported upi issue on account ACC-1023.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0022.",
+    "tags": [
+      "upi",
+      "banking"
+    ],
+    "urgency": "medium",
+    "sentiment": "negative",
+    "order_id": "ACC-1023"
+  },
+  {
+    "ticket_id": "CASE-R0023",
     "category": "account",
-    "issue": "Customer locked out of account, suspicious login flagged their account.",
-    "resolution": "Verified identity, restored access after identity verification.",
+    "issue": "Customer reported account issue on account ACC-1024.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0023.",
     "tags": [
-      "account"
-    ],
-    "urgency": "low",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2055"
-  },
-  {
-    "ticket_id": "T-1056",
-    "category": "shipping",
-    "issue": "Customer says package marked delivered but never arrived for order ORD-2056.",
-    "resolution": "Filed claim with carrier, replacement dispatched next day.",
-    "tags": [
-      "shipping"
-    ],
-    "urgency": "low",
-    "sentiment": "angry",
-    "order_id": "ORD-2056"
-  },
-  {
-    "ticket_id": "T-1057",
-    "category": "returns",
-    "issue": "Customer received wrong item for order ORD-2057, wants running shoes instead.",
-    "resolution": "Confirmed error, sent correct item via express shipping, no return needed for original.",
-    "tags": [
-      "returns",
-      "denied"
-    ],
-    "urgency": "medium",
-    "sentiment": "angry",
-    "order_id": "ORD-2057"
-  },
-  {
-    "ticket_id": "T-1058",
-    "category": "returns",
-    "issue": "Customer received wrong item for order ORD-2058, wants a smartwatch instead.",
-    "resolution": "Confirmed error, sent correct item via express shipping, no return needed for original.",
-    "tags": [
-      "returns",
-      "eligible"
+      "account",
+      "banking"
     ],
     "urgency": "high",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2058"
+    "sentiment": "positive",
+    "order_id": "ACC-1024"
   },
   {
-    "ticket_id": "T-1059",
-    "category": "account",
-    "issue": "Customer wants to delete their account and data.",
-    "resolution": "Processed deletion request per privacy policy, confirmed via email within 48 hours.",
+    "ticket_id": "CASE-R0024",
+    "category": "transaction",
+    "issue": "Customer reported transaction issue on account ACC-1025.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0024.",
     "tags": [
-      "account"
-    ],
-    "urgency": "medium",
-    "sentiment": "angry",
-    "order_id": "ORD-2059"
-  },
-  {
-    "ticket_id": "T-1060",
-    "category": "returns",
-    "issue": "Customer wants to return running shoes bought 27 days ago, changed their mind.",
-    "resolution": "Approved \u2014 within 30-day return window. Return label issued, refund initiated after item received.",
-    "tags": [
-      "returns",
-      "eligible"
-    ],
-    "urgency": "medium",
-    "sentiment": "neutral",
-    "order_id": "ORD-2060"
-  },
-  {
-    "ticket_id": "T-1061",
-    "category": "billing",
-    "issue": "Customer's subscription renewed after they thought they cancelled.",
-    "resolution": "Confirmed cancellation request was submitted late, refunded this cycle as goodwill.",
-    "tags": [
-      "billing"
-    ],
-    "urgency": "high",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2061"
-  },
-  {
-    "ticket_id": "T-1062",
-    "category": "account",
-    "issue": "Customer wants to delete their account and data.",
-    "resolution": "Processed deletion request per privacy policy, confirmed via email within 48 hours.",
-    "tags": [
-      "account"
-    ],
-    "urgency": "high",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2062"
-  },
-  {
-    "ticket_id": "T-1063",
-    "category": "technical",
-    "issue": "Customer unable to complete checkout on the app/website.",
-    "resolution": "Walked customer through using a different payment method, issue resolved.",
-    "tags": [
-      "technical"
-    ],
-    "urgency": "high",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2063"
-  },
-  {
-    "ticket_id": "T-1064",
-    "category": "shipping",
-    "issue": "Order ORD-2064 stuck in 'packed' for 29 days, customer asking for update.",
-    "resolution": "Warehouse delay confirmed, upgraded to express shipping as goodwill.",
-    "tags": [
-      "shipping"
-    ],
-    "urgency": "high",
-    "sentiment": "angry",
-    "order_id": "ORD-2064"
-  },
-  {
-    "ticket_id": "T-1065",
-    "category": "returns",
-    "issue": "Customer received wrong item for order ORD-2065, wants a blender instead.",
-    "resolution": "Confirmed error, sent correct item via express shipping, no return needed for original.",
-    "tags": [
-      "returns",
-      "eligible"
-    ],
-    "urgency": "low",
-    "sentiment": "angry",
-    "order_id": "ORD-2065"
-  },
-  {
-    "ticket_id": "T-1066",
-    "category": "shipping",
-    "issue": "Order ORD-2066 stuck in 'awaiting pickup' for 28 days, customer asking for update.",
-    "resolution": "Warehouse delay confirmed, upgraded to express shipping as goodwill.",
-    "tags": [
-      "shipping"
-    ],
-    "urgency": "medium",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2066"
-  },
-  {
-    "ticket_id": "T-1067",
-    "category": "shipping",
-    "issue": "Customer says package marked delivered but never arrived for order ORD-2067.",
-    "resolution": "Filed claim with carrier, replacement dispatched next day.",
-    "tags": [
-      "shipping"
+      "transaction",
+      "banking"
     ],
     "urgency": "low",
     "sentiment": "neutral",
-    "order_id": "ORD-2067"
+    "order_id": "ACC-1025"
   },
   {
-    "ticket_id": "T-1068",
-    "category": "billing",
-    "issue": "Customer's subscription renewed after they thought they cancelled.",
-    "resolution": "Confirmed cancellation request was submitted late, refunded this cycle as goodwill.",
+    "ticket_id": "CASE-R0025",
+    "category": "card",
+    "issue": "Customer reported card issue on account ACC-1026.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0025.",
     "tags": [
-      "billing"
+      "card",
+      "banking"
     ],
     "urgency": "medium",
-    "sentiment": "angry",
-    "order_id": "ORD-2068"
+    "sentiment": "negative",
+    "order_id": "ACC-1026"
   },
   {
-    "ticket_id": "T-1069",
-    "category": "returns",
-    "issue": "Customer received wrong item for order ORD-2069, wants a smartwatch instead.",
-    "resolution": "Confirmed error, sent correct item via express shipping, no return needed for original.",
+    "ticket_id": "CASE-R0026",
+    "category": "kyc",
+    "issue": "Customer reported kyc issue on account ACC-1027.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0026.",
     "tags": [
-      "returns",
-      "eligible"
+      "kyc",
+      "banking"
     ],
     "urgency": "high",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2069"
+    "sentiment": "positive",
+    "order_id": "ACC-1027"
   },
   {
-    "ticket_id": "T-1070",
-    "category": "account",
-    "issue": "Customer locked out of account, 2FA device was lost.",
-    "resolution": "Verified identity, reset password and re-enabled 2FA.",
+    "ticket_id": "CASE-R0027",
+    "category": "dispute",
+    "issue": "Customer reported dispute issue on account ACC-1028.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0027.",
     "tags": [
-      "account"
-    ],
-    "urgency": "high",
-    "sentiment": "neutral",
-    "order_id": "ORD-2070"
-  },
-  {
-    "ticket_id": "T-1071",
-    "category": "returns",
-    "issue": "Customer wants to return a smartwatch bought 20 days ago, no longer fits.",
-    "resolution": "Approved \u2014 within 30-day return window. Return label issued, refund initiated after item received.",
-    "tags": [
-      "returns",
-      "eligible"
-    ],
-    "urgency": "high",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2071"
-  },
-  {
-    "ticket_id": "T-1072",
-    "category": "technical",
-    "issue": "Customer's app crashes when opening the checkout page.",
-    "resolution": "Identified bug in coupon engine, escalated to engineering, workaround given: use the mobile site instead of the app temporarily.",
-    "tags": [
-      "technical"
-    ],
-    "urgency": "high",
-    "sentiment": "angry",
-    "order_id": "ORD-2072"
-  },
-  {
-    "ticket_id": "T-1073",
-    "category": "returns",
-    "issue": "Customer received wrong item for order ORD-2073, wants running shoes instead.",
-    "resolution": "Confirmed error, sent correct item via express shipping, no return needed for original.",
-    "tags": [
-      "returns",
-      "eligible"
-    ],
-    "urgency": "medium",
-    "sentiment": "neutral",
-    "order_id": "ORD-2073"
-  },
-  {
-    "ticket_id": "T-1074",
-    "category": "account",
-    "issue": "Customer wants to delete their account and data.",
-    "resolution": "Processed deletion request per privacy policy, confirmed via email within 48 hours.",
-    "tags": [
-      "account"
-    ],
-    "urgency": "medium",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2074"
-  },
-  {
-    "ticket_id": "T-1075",
-    "category": "shipping",
-    "issue": "Order ORD-2075 stuck in 'processing' for 7 days, customer asking for update.",
-    "resolution": "Warehouse delay confirmed, reshipped item at no cost.",
-    "tags": [
-      "shipping"
-    ],
-    "urgency": "high",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2075"
-  },
-  {
-    "ticket_id": "T-1076",
-    "category": "account",
-    "issue": "Customer locked out of account, 2FA device was lost.",
-    "resolution": "Verified identity, reset password and re-enabled 2FA.",
-    "tags": [
-      "account"
+      "dispute",
+      "banking"
     ],
     "urgency": "low",
     "sentiment": "neutral",
-    "order_id": "ORD-2076"
+    "order_id": "ACC-1028"
   },
   {
-    "ticket_id": "T-1077",
-    "category": "billing",
-    "issue": "Customer's subscription renewed after they thought they cancelled.",
-    "resolution": "Confirmed cancellation request was submitted late, refunded this cycle as goodwill.",
+    "ticket_id": "CASE-R0028",
+    "category": "upi",
+    "issue": "Customer reported upi issue on account ACC-1029.",
+    "resolution": "Verified in core banking mock data; provided policy steps and case reference CASE-R0028.",
     "tags": [
-      "billing"
-    ],
-    "urgency": "low",
-    "sentiment": "angry",
-    "order_id": "ORD-2077"
-  },
-  {
-    "ticket_id": "T-1078",
-    "category": "technical",
-    "issue": "Customer unable to log in on the app/website.",
-    "resolution": "Walked customer through updating the app to the latest version, issue resolved.",
-    "tags": [
-      "technical"
-    ],
-    "urgency": "low",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2078"
-  },
-  {
-    "ticket_id": "T-1079",
-    "category": "technical",
-    "issue": "Customer unable to log in on the app/website.",
-    "resolution": "Walked customer through using the 'forgot password' flow, issue resolved.",
-    "tags": [
-      "technical"
-    ],
-    "urgency": "high",
-    "sentiment": "angry",
-    "order_id": "ORD-2079"
-  },
-  {
-    "ticket_id": "T-1080",
-    "category": "shipping",
-    "issue": "Order ORD-2080 stuck in 'awaiting pickup' for 29 days, customer asking for update.",
-    "resolution": "Warehouse delay confirmed, replacement dispatched next day.",
-    "tags": [
-      "shipping"
-    ],
-    "urgency": "high",
-    "sentiment": "neutral",
-    "order_id": "ORD-2080"
-  },
-  {
-    "ticket_id": "T-1081",
-    "category": "billing",
-    "issue": "Customer's subscription renewed after they thought they cancelled.",
-    "resolution": "Confirmed cancellation request was submitted late, refunded this cycle as goodwill.",
-    "tags": [
-      "billing"
-    ],
-    "urgency": "high",
-    "sentiment": "angry",
-    "order_id": "ORD-2081"
-  },
-  {
-    "ticket_id": "T-1082",
-    "category": "returns",
-    "issue": "Customer received wrong item for order ORD-2082, wants running shoes instead.",
-    "resolution": "Confirmed error, sent correct item via express shipping, no return needed for original.",
-    "tags": [
-      "returns",
-      "eligible"
+      "upi",
+      "banking"
     ],
     "urgency": "medium",
-    "sentiment": "angry",
-    "order_id": "ORD-2082"
-  },
-  {
-    "ticket_id": "T-1083",
-    "category": "shipping",
-    "issue": "Order ORD-2083 stuck in 'awaiting pickup' for 21 days, customer asking for update.",
-    "resolution": "Warehouse delay confirmed, reshipped item at no cost.",
-    "tags": [
-      "shipping"
-    ],
-    "urgency": "medium",
-    "sentiment": "neutral",
-    "order_id": "ORD-2083"
-  },
-  {
-    "ticket_id": "T-1084",
-    "category": "shipping",
-    "issue": "Customer says package marked delivered but never arrived for order ORD-2084.",
-    "resolution": "Filed claim with carrier, reshipped item at no cost.",
-    "tags": [
-      "shipping"
-    ],
-    "urgency": "high",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2084"
-  },
-  {
-    "ticket_id": "T-1085",
-    "category": "shipping",
-    "issue": "Customer says package marked delivered but never arrived for order ORD-2085.",
-    "resolution": "Filed claim with carrier, upgraded to express shipping as goodwill.",
-    "tags": [
-      "shipping"
-    ],
-    "urgency": "low",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2085"
-  },
-  {
-    "ticket_id": "T-1086",
-    "category": "technical",
-    "issue": "Customer's app crashes when uploading a large image.",
-    "resolution": "Identified bug in image upload service, escalated to engineering, workaround given: retry after app update.",
-    "tags": [
-      "technical"
-    ],
-    "urgency": "low",
-    "sentiment": "angry",
-    "order_id": "ORD-2086"
-  },
-  {
-    "ticket_id": "T-1087",
-    "category": "returns",
-    "issue": "Customer received wrong item for order ORD-2087, wants a laptop bag instead.",
-    "resolution": "Confirmed error, sent correct item via express shipping, no return needed for original.",
-    "tags": [
-      "returns",
-      "eligible"
-    ],
-    "urgency": "low",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2087"
-  },
-  {
-    "ticket_id": "T-1088",
-    "category": "account",
-    "issue": "Customer locked out of account, forgot password and lost access to recovery email.",
-    "resolution": "Verified identity, unlocked account after confirming recent activity.",
-    "tags": [
-      "account"
-    ],
-    "urgency": "medium",
-    "sentiment": "angry",
-    "order_id": "ORD-2088"
-  },
-  {
-    "ticket_id": "T-1089",
-    "category": "billing",
-    "issue": "Customer's subscription renewed after they thought they cancelled.",
-    "resolution": "Confirmed cancellation request was submitted late, refunded this cycle as goodwill.",
-    "tags": [
-      "billing"
-    ],
-    "urgency": "medium",
-    "sentiment": "angry",
-    "order_id": "ORD-2089"
-  },
-  {
-    "ticket_id": "T-1090",
-    "category": "returns",
-    "issue": "Customer wants to return wireless earbuds bought 1 days ago, arrived damaged.",
-    "resolution": "Approved \u2014 within 30-day return window. Return label issued, refund initiated after item received.",
-    "tags": [
-      "returns",
-      "eligible"
-    ],
-    "urgency": "low",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2090"
-  },
-  {
-    "ticket_id": "T-1091",
-    "category": "technical",
-    "issue": "Customer's app crashes when opening the checkout page.",
-    "resolution": "Identified bug in coupon engine, escalated to engineering, workaround given: use the mobile site instead of the app temporarily.",
-    "tags": [
-      "technical"
-    ],
-    "urgency": "medium",
-    "sentiment": "angry",
-    "order_id": "ORD-2091"
-  },
-  {
-    "ticket_id": "T-1092",
-    "category": "returns",
-    "issue": "Customer received wrong item for order ORD-2092, wants a backpack instead.",
-    "resolution": "Confirmed error, sent correct item via express shipping, no return needed for original.",
-    "tags": [
-      "returns",
-      "eligible"
-    ],
-    "urgency": "low",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2092"
-  },
-  {
-    "ticket_id": "T-1093",
-    "category": "account",
-    "issue": "Customer wants to delete their account and data.",
-    "resolution": "Processed deletion request per privacy policy, confirmed via email within 48 hours.",
-    "tags": [
-      "account"
-    ],
-    "urgency": "medium",
-    "sentiment": "angry",
-    "order_id": "ORD-2093"
-  },
-  {
-    "ticket_id": "T-1094",
-    "category": "billing",
-    "issue": "Customer charged twice for order ORD-2094.",
-    "resolution": "Verified duplicate charge via transaction IDs, refunded extra charge within 7 business days.",
-    "tags": [
-      "billing"
-    ],
-    "urgency": "high",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2094"
-  },
-  {
-    "ticket_id": "T-1095",
-    "category": "account",
-    "issue": "Customer wants to delete their account and data.",
-    "resolution": "Processed deletion request per privacy policy, confirmed via email within 48 hours.",
-    "tags": [
-      "account"
-    ],
-    "urgency": "low",
-    "sentiment": "frustrated",
-    "order_id": "ORD-2095"
-  },
-  {
-    "ticket_id": "T-1096",
-    "category": "billing",
-    "issue": "Customer's subscription renewed after they thought they cancelled.",
-    "resolution": "Confirmed cancellation request was submitted late, refunded this cycle as goodwill.",
-    "tags": [
-      "billing"
-    ],
-    "urgency": "high",
-    "sentiment": "neutral",
-    "order_id": "ORD-2096"
-  },
-  {
-    "ticket_id": "T-1097",
-    "category": "shipping",
-    "issue": "Customer says package marked delivered but never arrived for order ORD-2097.",
-    "resolution": "Filed claim with carrier, issued full refund.",
-    "tags": [
-      "shipping"
-    ],
-    "urgency": "medium",
-    "sentiment": "angry",
-    "order_id": "ORD-2097"
-  },
-  {
-    "ticket_id": "T-1098",
-    "category": "technical",
-    "issue": "Customer's app crashes when opening the checkout page.",
-    "resolution": "Identified bug in image upload service, escalated to engineering, workaround given: use the mobile site instead of the app temporarily.",
-    "tags": [
-      "technical"
-    ],
-    "urgency": "high",
-    "sentiment": "angry",
-    "order_id": "ORD-2098"
-  },
-  {
-    "ticket_id": "T-1099",
-    "category": "returns",
-    "issue": "Customer received wrong item for order ORD-2099, wants a office chair instead.",
-    "resolution": "Confirmed error, sent correct item via express shipping, no return needed for original.",
-    "tags": [
-      "returns",
-      "eligible"
-    ],
-    "urgency": "high",
-    "sentiment": "angry",
-    "order_id": "ORD-2099"
+    "sentiment": "negative",
+    "order_id": "ACC-1029"
   }
 ]

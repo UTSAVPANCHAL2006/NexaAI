@@ -39,6 +39,7 @@ Thumbs.db
 
 # Project Specific
 artifacts/
+dump.rdb
 logs/
 graph.png
 *.log

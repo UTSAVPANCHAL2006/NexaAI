@@ -7,44 +7,59 @@ from app.common.logger import get_logger
 logger = get_logger(__name__)
 
 SUPPORT_KEYWORDS = [
-    "order",
-    "track",
-    "tracking",
-    "shipment",
-    "shipping",
-    "delivery",
-    "deliver",
-    "return",
-    "refund",
-    "billing",
-    "payment",
-    "invoice",
-    "subscription",
-    "ticket",
     "account",
+    "balance",
+    "card",
+    "debit",
+    "credit",
+    "upi",
+    "neft",
+    "imps",
+    "rtgs",
+    "transaction",
+    "transfer",
+    "payment",
+    "failed",
+    "pending",
+    "refund",
+    "dispute",
+    "chargeback",
+    "kyc",
+    "aadhaar",
+    "pan",
+    "verify",
+    "block",
+    "stolen",
+    "lost",
+    "replacement",
+    "limit",
+    "fee",
+    "charges",
+    "fraud",
+    "unauthorized",
     "login",
     "password",
-    "access",
-    "cancel",
-    "status",
+    "otp",
+    "branch",
+    "ifsc",
+    "statement",
     "policy",
     "faq",
     "support",
     "help",
     "issue",
     "problem",
-    "broken",
     "working",
-    "late",
-    "delay",
-    "price",
-    "cost",
-    "amount",
     "hi",
     "hello",
     "hey",
+    "he",
     "thanks",
     "thank you",
+    "customer",
+    "status",
+    "complete",
+    "incomplete",
 ]
 
 INJECTION_PATTERNS = [
@@ -61,13 +76,24 @@ INJECTION_PATTERNS = [
 ]
 
 # Customers often provide an ID as a follow-up after we ask for it (for example,
-# "ORD-1013").  Treat that as a support message even when it has no keywords.
-SUPPORT_ID_PATTERN = re.compile(r"\b(?:ORD|TRK|T)-\d+\b", re.IGNORECASE)
+# "ACC-1001" or "4521").  Treat that as a support message even when it has no keywords.
+SUPPORT_ID_PATTERN = re.compile(
+    r"\b(?:ACC|CRD|TXN|CASE|UTR)-[\w\d]+\b|\b\d{4}\b",
+    re.IGNORECASE,
+)
+
+USER_ID_PATTERN = re.compile(r"\buser_\d+\b", re.IGNORECASE)
 
 # These messages are handled by the classifier's `respond` action.  Blocking
 # them prevents a normal conversation and makes the UI feel broken.
 CONVERSATIONAL_PATTERN = re.compile(
     r"^(?:hi|hello|hey|thanks|thank you|how are you|how are u)[!?.\s]*$",
+    re.IGNORECASE,
+)
+
+FOLLOWUP_PATTERN = re.compile(
+    r"\b(it|that|this|same|also|what about|how about|my card|the card|block it|"
+    r"that one|yes|ok|okay|and the|for that)\b",
     re.IGNORECASE,
 )
 
@@ -88,7 +114,9 @@ class GuardNode:
 
             if (
                 SUPPORT_ID_PATTERN.search(message)
+                or USER_ID_PATTERN.search(message)
                 or CONVERSATIONAL_PATTERN.fullmatch(message)
+                or FOLLOWUP_PATTERN.search(message)
                 or any(keyword in normalized_message for keyword in SUPPORT_KEYWORDS)
             ):
                 logger.info("GuardNode classification: support")
@@ -98,9 +126,9 @@ class GuardNode:
             return {
                 "action": "blocked",
                 "response": (
-                    "I'm a customer support assistant. I can only help with "
-                    "orders, shipments, returns, billing, tickets, or account issues. "
-                    "Please ask a support-related question."
+                    "I'm a banking support assistant. I can only help with "
+                    "accounts, cards, UPI/NEFT transactions, KYC, fees, disputes, or fraud-related queries. "
+                    "Please ask a banking support question."
                 ),
             }
 

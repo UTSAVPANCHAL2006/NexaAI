@@ -1,5 +1,8 @@
 import json
+from datetime import datetime
+
 from app.config.config import TICKETS_PATH , RESOLVED_TICKETS_FILE
+from app.agents.tools.persist import save_json
         
 class TicketTool:
     
@@ -9,26 +12,27 @@ class TicketTool:
             
         with open(RESOLVED_TICKETS_FILE,"r") as f:
             self.resolved_tickets_list = json.load(f)
-            # Convert list of resolved tickets to a dictionary keyed by ticket_id for easy lookup
             self.resolved_tickets = {t["ticket_id"]: t for t in self.resolved_tickets_list}
+
+    def save_tickets(self):
+        save_json(TICKETS_PATH, self.tickets)
         
     def get_tickets(self, ticket_id: str):
         
         ticket = self.tickets.get(ticket_id)
         
         if ticket is None:
-            # Fallback to check if it's a past resolved ticket
             resolved = self.resolved_tickets.get(ticket_id)
             if resolved:
                 return {
                     "success": True,
                     "ticket": resolved,
-                    "message": "This is a past resolved ticket."
+                    "message": "This is a past resolved case.",
                 }
                 
             return {
                 "success" : False,
-                "message" : "Ticket Not Found"
+                "message" : "Case Not Found"
             }
             
         ticket_copy = ticket.copy()
@@ -43,7 +47,6 @@ class TicketTool:
         ticket = self.tickets.get(ticket_id)
         
         if ticket is None:
-            # Fallback for resolved tickets
             resolved = self.resolved_tickets.get(ticket_id)
             if resolved:
                 return {
@@ -54,7 +57,7 @@ class TicketTool:
                 
             return {
                 "success": False,
-                "message": "Ticket not found."
+                "message": "Case not found."
             }
 
         ticket_copy = ticket.copy()
@@ -63,5 +66,43 @@ class TicketTool:
             "success": True,
             "status": ticket["status"],
             "ticket": ticket_copy
+        }
+
+    def create_dispute_case(self, user_id: str, account_id: str = None, txn_id: str = None):
+        if not user_id or not str(user_id).strip():
+            return {
+                "success": False,
+                "needs_clarification": True,
+                "message": "Please confirm your customer ID to raise a dispute case.",
+            }
+        next_num = 9000 + len(self.tickets) + 1
+        case_id = f"CASE-NEW-{next_num}"
+        record = {
+            "ticket_id": case_id,
+            "case_id": case_id,
+            "user_id": user_id.strip(),
+            "account_id": account_id,
+            "status": "open",
+            "category": "dispute",
+            "sub_category": "customer_initiated",
+            "priority": "medium",
+            "channel": "chat",
+            "subject": "Dispute raised via banking assistant",
+            "txn_id": txn_id,
+            "created_on": datetime.now().strftime("%Y-%m-%d"),
+            "assigned_team": "disputes_desk",
+        }
+        self.tickets[case_id] = record
+        self.save_tickets()
+        return {
+            "success": True,
+            "mutation": True,
+            "message": "Dispute case created.",
+            "case_id": case_id,
+            "user_id": user_id.strip(),
+            "account_id": account_id,
+            "txn_id": txn_id,
+            "status": "open",
+            "ticket": record,
         }
         

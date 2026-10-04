@@ -1,6 +1,7 @@
 from app.schema.classify import ClassificationSchema
 from app.prompts.classify_prompt import CLASSIFY_PROMPT
 from app.agents.state import Agentstate
+from app.agents.session_context import format_session_context
 from app.rag.llm import LLM
 from app.common.logger import get_logger
 from app.common.custom_exception import CustomException
@@ -23,7 +24,8 @@ class Classifynode:
             
             result = chain.invoke({
                 "ticket": state["ticket"],
-                "history": state.get("messages", [])[-3:]
+                "session_context": format_session_context(state),
+                "history": state.get("messages", [])[-4:],
             })
             
             logger.info(f"ClassifyNode result: category={result.category}, action={result.action}")

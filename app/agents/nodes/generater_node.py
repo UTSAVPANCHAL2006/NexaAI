@@ -12,7 +12,7 @@ class Generatenode:
         
     def generate_node(self, state: Agentstate):
         try:
-            logger.info("GenerateNode started (non-streaming)")
+            logger.info("GenerateNode started")
 
             if state.get("action") == "blocked":
                 logger.info("GenerateNode: Request was blocked")
@@ -24,7 +24,7 @@ class Generatenode:
             docs = state.get("documents", [])
             tool_result = state.get("tool_result")
             action = state.get("action")
-            history = state.get("messages", [])[-6:]
+            history = state.get("messages", [])[-12:]
 
             response = self.generator.generate(
                 ticket=state["ticket"],
@@ -32,8 +32,10 @@ class Generatenode:
                 documents=docs,
                 tool_result=tool_result,
                 history=history,
-                order_id=state.get("order_id"),
-                ticket_id=state.get("ticket_id"),
+                account_id=state.get("account_id"),
+                case_id=state.get("case_id"),
+                card_last4=state.get("card_last4"),
+                txn_id=state.get("txn_id"),
             )
 
             logger.info("GenerateNode generated response successfully")

@@ -1,4 +1,4 @@
-from langchain_groq import ChatGroq
+from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 
 from app.common.logger import get_logger
@@ -8,15 +8,15 @@ logger = get_logger(__name__)
 
 class LLM:
 
-    def __init__(self, groq_model: str, api_key: str):
-        self.groq_model = groq_model
+    def __init__(self, model: str, api_key: str):
+        self.model = model
         self.api_key = api_key
 
     def get_llm(self):
         try:
-            logger.info(f"Loading LLM: {self.groq_model}")
+            logger.info(f"Loading LLM: {self.model}")
 
-            llm = ChatGroq(model=self.groq_model, groq_api_key=self.api_key, temperature=0)
+            llm = ChatOpenAI(model=self.model, api_key=self.api_key, temperature=0)
 
             logger.info("LLM loaded successfully.")
             return llm
@@ -36,8 +36,8 @@ class LLM:
                     (
                         "system",
                         """
-                        You are an AI Customer Support Agent.
-                        Answer ONLY using the provided context.
+                        You are an AI Banking Support Agent.
+                        Answer ONLY using the provided banking policy context.
                         If the answer cannot be found,
                         reply:
                         "I don't have enough information."

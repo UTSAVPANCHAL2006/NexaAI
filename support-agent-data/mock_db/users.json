@@ -1,62 +1,362 @@
 {
   "user_1": {
-    "name": "User 1",
-    "email": "user_1@example.com"
+    "customer_id": "user_1",
+    "full_name": "Aarav Sharma",
+    "name": "Aarav Sharma",
+    "email": "aarav.sharma@email.com",
+    "mobile": "+91-9810000001",
+    "pan_masked": "XXXXX1001F",
+    "ckyc_reference": "CKYC-20240001",
+    "customer_segment": "premium",
+    "relationship_manager": false,
+    "registered_device": "DEVICE-0001"
   },
   "user_2": {
-    "name": "User 2",
-    "email": "user_2@example.com"
+    "customer_id": "user_2",
+    "full_name": "Vihaan Patel",
+    "name": "Vihaan Patel",
+    "email": "vihaan.patel@email.com",
+    "mobile": "+91-9810000002",
+    "pan_masked": "XXXXX1002F",
+    "ckyc_reference": "CKYC-20240002",
+    "customer_segment": "salary",
+    "relationship_manager": false,
+    "registered_device": "DEVICE-0002"
   },
   "user_3": {
-    "name": "User 3",
-    "email": "user_3@example.com"
+    "customer_id": "user_3",
+    "full_name": "Ananya Reddy",
+    "name": "Ananya Reddy",
+    "email": "ananya.reddy@email.com",
+    "mobile": "+91-9810000003",
+    "pan_masked": "XXXXX1003F",
+    "ckyc_reference": "CKYC-20240003",
+    "customer_segment": "retail",
+    "relationship_manager": false,
+    "registered_device": "DEVICE-0003"
   },
   "user_4": {
-    "name": "User 4",
-    "email": "user_4@example.com"
+    "customer_id": "user_4",
+    "full_name": "Isha Iyer",
+    "name": "Isha Iyer",
+    "email": "isha.iyer@email.com",
+    "mobile": "+91-9810000004",
+    "pan_masked": "XXXXX1004F",
+    "ckyc_reference": "CKYC-20240004",
+    "customer_segment": "retail",
+    "relationship_manager": false,
+    "registered_device": "DEVICE-0004"
   },
   "user_5": {
-    "name": "User 5",
-    "email": "user_5@example.com"
+    "customer_id": "user_5",
+    "full_name": "Rohan Gupta",
+    "name": "Rohan Gupta",
+    "email": "rohan.gupta@email.com",
+    "mobile": "+91-9810000005",
+    "pan_masked": "XXXXX1005F",
+    "ckyc_reference": "CKYC-20240005",
+    "customer_segment": "premium",
+    "relationship_manager": true,
+    "registered_device": "DEVICE-0005"
   },
   "user_6": {
-    "name": "User 6",
-    "email": "user_6@example.com"
+    "customer_id": "user_6",
+    "full_name": "Priya Mehta",
+    "name": "Priya Mehta",
+    "email": "priya.mehta@email.com",
+    "mobile": "+91-9810000006",
+    "pan_masked": "XXXXX1006F",
+    "ckyc_reference": "CKYC-20240006",
+    "customer_segment": "salary",
+    "relationship_manager": false,
+    "registered_device": "DEVICE-0006"
   },
   "user_7": {
-    "name": "User 7",
-    "email": "user_7@example.com"
+    "customer_id": "user_7",
+    "full_name": "Karan Khan",
+    "name": "Karan Khan",
+    "email": "karan.khan@email.com",
+    "mobile": "+91-9810000007",
+    "pan_masked": "XXXXX1007F",
+    "ckyc_reference": "CKYC-20240007",
+    "customer_segment": "retail",
+    "relationship_manager": false,
+    "registered_device": "DEVICE-0007"
   },
   "user_8": {
-    "name": "User 8",
-    "email": "user_8@example.com"
+    "customer_id": "user_8",
+    "full_name": "Neha Singh",
+    "name": "Neha Singh",
+    "email": "neha.singh@email.com",
+    "mobile": "+91-9810000008",
+    "pan_masked": "XXXXX1008F",
+    "ckyc_reference": "CKYC-20240008",
+    "customer_segment": "retail",
+    "relationship_manager": false,
+    "registered_device": "DEVICE-0008"
   },
   "user_9": {
-    "name": "User 9",
-    "email": "user_9@example.com"
+    "customer_id": "user_9",
+    "full_name": "Arjun Nair",
+    "name": "Arjun Nair",
+    "email": "arjun.nair@email.com",
+    "mobile": "+91-9810000009",
+    "pan_masked": "XXXXX1009F",
+    "ckyc_reference": "CKYC-20240009",
+    "customer_segment": "premium",
+    "relationship_manager": false,
+    "registered_device": "DEVICE-0009"
   },
   "user_10": {
-    "name": "User 10",
-    "email": "user_10@example.com"
+    "customer_id": "user_10",
+    "full_name": "Sneha Joshi",
+    "name": "Sneha Joshi",
+    "email": "sneha.joshi@email.com",
+    "mobile": "+91-9810000010",
+    "pan_masked": "XXXXX1010F",
+    "ckyc_reference": "CKYC-20240010",
+    "customer_segment": "salary",
+    "relationship_manager": true,
+    "registered_device": "DEVICE-0010"
   },
   "user_11": {
-    "name": "User 11",
-    "email": "user_11@example.com"
+    "customer_id": "user_11",
+    "full_name": "Rahul Panchal",
+    "name": "Rahul Panchal",
+    "email": "rahul.panchal@email.com",
+    "mobile": "+91-9810000011",
+    "pan_masked": "XXXXX1011F",
+    "ckyc_reference": "CKYC-20240011",
+    "customer_segment": "retail",
+    "relationship_manager": false,
+    "registered_device": "DEVICE-0011"
   },
   "user_12": {
-    "name": "User 12",
-    "email": "user_12@example.com"
+    "customer_id": "user_12",
+    "full_name": "Pooja Desai",
+    "name": "Pooja Desai",
+    "email": "pooja.desai@email.com",
+    "mobile": "+91-9810000012",
+    "pan_masked": "XXXXX1012F",
+    "ckyc_reference": "CKYC-20240012",
+    "customer_segment": "retail",
+    "relationship_manager": false,
+    "registered_device": "DEVICE-0012"
   },
   "user_13": {
-    "name": "User 13",
-    "email": "user_13@example.com"
+    "customer_id": "user_13",
+    "full_name": "Amit Kapoor",
+    "name": "Amit Kapoor",
+    "email": "amit.kapoor@email.com",
+    "mobile": "+91-9810000013",
+    "pan_masked": "XXXXX1013F",
+    "ckyc_reference": "CKYC-20240013",
+    "customer_segment": "premium",
+    "relationship_manager": false,
+    "registered_device": "DEVICE-0013"
   },
   "user_14": {
-    "name": "User 14",
-    "email": "user_14@example.com"
+    "customer_id": "user_14",
+    "full_name": "Divya Malhotra",
+    "name": "Divya Malhotra",
+    "email": "divya.malhotra@email.com",
+    "mobile": "+91-9810000014",
+    "pan_masked": "XXXXX1014F",
+    "ckyc_reference": "CKYC-20240014",
+    "customer_segment": "salary",
+    "relationship_manager": false,
+    "registered_device": "DEVICE-0014"
   },
   "user_15": {
-    "name": "User 15",
-    "email": "user_15@example.com"
+    "customer_id": "user_15",
+    "full_name": "Vikram Verma",
+    "name": "Vikram Verma",
+    "email": "vikram.verma@email.com",
+    "mobile": "+91-9810000015",
+    "pan_masked": "XXXXX1015F",
+    "ckyc_reference": "CKYC-20240015",
+    "customer_segment": "retail",
+    "relationship_manager": true,
+    "registered_device": "DEVICE-0015"
+  },
+  "user_16": {
+    "customer_id": "user_16",
+    "full_name": "Kavya Chopra",
+    "name": "Kavya Chopra",
+    "email": "kavya.chopra@email.com",
+    "mobile": "+91-9810000016",
+    "pan_masked": "XXXXX1016F",
+    "ckyc_reference": "CKYC-20240016",
+    "customer_segment": "retail",
+    "relationship_manager": false,
+    "registered_device": "DEVICE-0016"
+  },
+  "user_17": {
+    "customer_id": "user_17",
+    "full_name": "Sanjay Bose",
+    "name": "Sanjay Bose",
+    "email": "sanjay.bose@email.com",
+    "mobile": "+91-9810000017",
+    "pan_masked": "XXXXX1017F",
+    "ckyc_reference": "CKYC-20240017",
+    "customer_segment": "premium",
+    "relationship_manager": false,
+    "registered_device": "DEVICE-0017"
+  },
+  "user_18": {
+    "customer_id": "user_18",
+    "full_name": "Meera Agarwal",
+    "name": "Meera Agarwal",
+    "email": "meera.agarwal@email.com",
+    "mobile": "+91-9810000018",
+    "pan_masked": "XXXXX1018F",
+    "ckyc_reference": "CKYC-20240018",
+    "customer_segment": "salary",
+    "relationship_manager": false,
+    "registered_device": "DEVICE-0018"
+  },
+  "user_19": {
+    "customer_id": "user_19",
+    "full_name": "Nikhil Rao",
+    "name": "Nikhil Rao",
+    "email": "nikhil.rao@email.com",
+    "mobile": "+91-9810000019",
+    "pan_masked": "XXXXX1019F",
+    "ckyc_reference": "CKYC-20240019",
+    "customer_segment": "retail",
+    "relationship_manager": false,
+    "registered_device": "DEVICE-0019"
+  },
+  "user_20": {
+    "customer_id": "user_20",
+    "full_name": "Ritu Pillai",
+    "name": "Ritu Pillai",
+    "email": "ritu.pillai@email.com",
+    "mobile": "+91-9810000020",
+    "pan_masked": "XXXXX1020F",
+    "ckyc_reference": "CKYC-20240020",
+    "customer_segment": "retail",
+    "relationship_manager": true,
+    "registered_device": "DEVICE-0020"
+  },
+  "user_21": {
+    "customer_id": "user_21",
+    "full_name": "Utsav Shah",
+    "name": "Utsav Shah",
+    "email": "utsav.shah@email.com",
+    "mobile": "+91-9810000021",
+    "pan_masked": "XXXXX1021F",
+    "ckyc_reference": "CKYC-20240021",
+    "customer_segment": "premium",
+    "relationship_manager": false,
+    "registered_device": "DEVICE-0021"
+  },
+  "user_22": {
+    "customer_id": "user_22",
+    "full_name": "Aditya Kulkarni",
+    "name": "Aditya Kulkarni",
+    "email": "aditya.kulkarni@email.com",
+    "mobile": "+91-9810000022",
+    "pan_masked": "XXXXX1022F",
+    "ckyc_reference": "CKYC-20240022",
+    "customer_segment": "salary",
+    "relationship_manager": false,
+    "registered_device": "DEVICE-0022"
+  },
+  "user_23": {
+    "customer_id": "user_23",
+    "full_name": "Shreya Menon",
+    "name": "Shreya Menon",
+    "email": "shreya.menon@email.com",
+    "mobile": "+91-9810000023",
+    "pan_masked": "XXXXX1023F",
+    "ckyc_reference": "CKYC-20240023",
+    "customer_segment": "retail",
+    "relationship_manager": false,
+    "registered_device": "DEVICE-0023"
+  },
+  "user_24": {
+    "customer_id": "user_24",
+    "full_name": "Manish Das",
+    "name": "Manish Das",
+    "email": "manish.das@email.com",
+    "mobile": "+91-9810000024",
+    "pan_masked": "XXXXX1024F",
+    "ckyc_reference": "CKYC-20240024",
+    "customer_segment": "retail",
+    "relationship_manager": false,
+    "registered_device": "DEVICE-0024"
+  },
+  "user_25": {
+    "customer_id": "user_25",
+    "full_name": "Tanvi Chauhan",
+    "name": "Tanvi Chauhan",
+    "email": "tanvi.chauhan@email.com",
+    "mobile": "+91-9810000025",
+    "pan_masked": "XXXXX1025F",
+    "ckyc_reference": "CKYC-20240025",
+    "customer_segment": "premium",
+    "relationship_manager": true,
+    "registered_device": "DEVICE-0025"
+  },
+  "user_26": {
+    "customer_id": "user_26",
+    "full_name": "Deepak Saxena",
+    "name": "Deepak Saxena",
+    "email": "deepak.saxena@email.com",
+    "mobile": "+91-9810000026",
+    "pan_masked": "XXXXX1026F",
+    "ckyc_reference": "CKYC-20240026",
+    "customer_segment": "salary",
+    "relationship_manager": false,
+    "registered_device": "DEVICE-0026"
+  },
+  "user_27": {
+    "customer_id": "user_27",
+    "full_name": "Nidhi Mishra",
+    "name": "Nidhi Mishra",
+    "email": "nidhi.mishra@email.com",
+    "mobile": "+91-9810000027",
+    "pan_masked": "XXXXX1027F",
+    "ckyc_reference": "CKYC-20240027",
+    "customer_segment": "retail",
+    "relationship_manager": false,
+    "registered_device": "DEVICE-0027"
+  },
+  "user_28": {
+    "customer_id": "user_28",
+    "full_name": "Harsh Tiwari",
+    "name": "Harsh Tiwari",
+    "email": "harsh.tiwari@email.com",
+    "mobile": "+91-9810000028",
+    "pan_masked": "XXXXX1028F",
+    "ckyc_reference": "CKYC-20240028",
+    "customer_segment": "retail",
+    "relationship_manager": false,
+    "registered_device": "DEVICE-0028"
+  },
+  "user_29": {
+    "customer_id": "user_29",
+    "full_name": "Simran Bhatt",
+    "name": "Simran Bhatt",
+    "email": "simran.bhatt@email.com",
+    "mobile": "+91-9810000029",
+    "pan_masked": "XXXXX1029F",
+    "ckyc_reference": "CKYC-20240029",
+    "customer_segment": "premium",
+    "relationship_manager": false,
+    "registered_device": "DEVICE-0029"
+  },
+  "user_30": {
+    "customer_id": "user_30",
+    "full_name": "Yash Soni",
+    "name": "Yash Soni",
+    "email": "yash.soni@email.com",
+    "mobile": "+91-9810000030",
+    "pan_masked": "XXXXX1030F",
+    "ckyc_reference": "CKYC-20240030",
+    "customer_segment": "salary",
+    "relationship_manager": true,
+    "registered_device": "DEVICE-0030"
   }
 }

@@ -7,7 +7,7 @@ from deepeval.test_case import LLMTestCase
 from deepeval.metrics import AnswerRelevancyMetric, HallucinationMetric, ContextualPrecisionMetric
 from langchain_openai import ChatOpenAI
 from app.api import graph
-from app.config.config import LANGFUSE_ENABLED, GROQ_MODEL_NAME, OPENAI_API_KEY, OPENAI_EVAL_MODEL
+from app.config.config import LANGFUSE_ENABLED, OPENAI_API_KEY, OPENAI_EVAL_MODEL
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -54,7 +54,7 @@ def run_evaluation():
     dataset_path = os.path.join(base_dir, "tests", "eval_dataset.json")
     dataset = load_dataset(dataset_path)
     dataset = dataset[:50] 
-    # Initialize OpenAI as the evaluator judge (avoids Groq 30 RPM cap)
+    # Initialize OpenAI as the evaluator judge (OPENAI_EVAL_MODEL)
     evaluator_llm = OpenAIEvaluator()
 
     correctness_metric = AnswerRelevancyMetric(threshold=0.7, model=evaluator_llm)
@@ -121,12 +121,12 @@ def run_evaluation():
         actual_category = result.get("category")
         actual_action = result.get("action")
         actual_tool = result.get("tool_name")
-        actual_order_id = result.get("order_id")
+        actual_account_id = result.get("account_id")
 
         exp_category = item.get("expected_category")
         exp_action = item.get("expected_action")
         exp_tool = item.get("expected_tool")
-        exp_order_id = item.get("expected_order_id")
+        exp_account_id = item.get("expected_account_id") or item.get("expected_order_id")
 
         category_match = (exp_category is None) or (actual_category == exp_category)
         action_match = (exp_action is None) or (actual_action == exp_action)
@@ -137,9 +137,9 @@ def run_evaluation():
         correct_tool += int(tool_match)
 
         order_id_match = None
-        if exp_order_id is not None:
+        if exp_account_id is not None:
             order_id_checked += 1
-            order_id_match = (actual_order_id == exp_order_id)
+            order_id_match = (actual_account_id == exp_account_id)
             correct_order_id += int(order_id_match)
 
         node_results.append({
@@ -148,7 +148,7 @@ def run_evaluation():
             "category": {"expected": exp_category, "actual": actual_category, "match": category_match},
             "action": {"expected": exp_action, "actual": actual_action, "match": action_match},
             "tool": {"expected": exp_tool, "actual": actual_tool, "match": tool_match},
-            "order_id": {"expected": exp_order_id, "actual": actual_order_id, "match": order_id_match},
+            "account_id": {"expected": exp_account_id, "actual": actual_account_id, "match": order_id_match},
         })
 
         # ---- Build DeepEval test case for final-answer quality ----
@@ -174,7 +174,7 @@ def run_evaluation():
             retrieval_context = ["No context retrieved."]
             if actual_action == "call_tool":
                 print(f"  [Warning] item {idx+1}: tool_result missing/empty despite "
-                      f"call_tool action — check graph state propagation.")
+                    f"call_tool action — check graph state propagation.")
 
         test_case = LLMTestCase(
             input=item["input"],
@@ -201,7 +201,8 @@ def run_evaluation():
         test_cases.append((test_case, is_rag_case, is_refusal_case))
 
         status = f"category={'✅' if category_match else '❌'} action={'✅' if action_match else '❌'} tool={'✅' if tool_match else '❌'}"
-        print(f"[{idx+1}/{total}] {item['category']} — {status}")
+        cat_name = item.get("expected_category", "general")
+        print(f"[{idx+1}/{total}] {cat_name} — {status}")
         time.sleep(2)
 
     # ---- Print node-level accuracy summary ----

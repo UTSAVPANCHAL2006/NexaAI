@@ -4,7 +4,7 @@ import uuid
 
 import os
 API_URL = os.getenv("API_URL", "http://127.0.0.1:8000/chat")
-st.set_page_config(page_title="Agentic Support AI", page_icon="🤖")
+st.set_page_config(page_title="Intelligent Banking Assistant", page_icon="🤖")
 
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = {}
@@ -37,8 +37,8 @@ with st.sidebar:
             st.session_state.thread_id = t_id
             st.rerun()
 
-st.title("🤖 Agentic Customer Support AI")
-st.write("Welcome! I can answer policy questions, track/cancel your orders, and check ticket statuses.")
+st.title("🤖 Intelligent Banking Assistant")
+st.write("Welcome! I can help with account balance, cards, UPI/NEFT transactions, KYC, policies, and dispute cases.")
 
 active_messages = st.session_state.chat_history[active_thread]["messages"]
 

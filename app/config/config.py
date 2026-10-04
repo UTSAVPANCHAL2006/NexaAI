@@ -12,15 +12,11 @@ KB_DIR = DATA_DIR / "knowledge_base"
 
 MOCK_DB_DIR = DATA_DIR / "mock_db"
 
-EVAL_DIR = DATA_DIR / "eval"
-
 RESOLVED_TICKETS_FILE = (
     KB_DIR
     / "past_tickets"
     / "resolved_tickets.json"
 )
-
-OUTPUT_PATH="artifacts/loaded_documents.json"
 
 CHUNK_SIZE=500
 CHUNK_OVERLAP = 100
@@ -29,16 +25,22 @@ EMBEDDING_MODEL = "BAAI/bge-base-en-v1.5"
 
 QDRANT_URL        = os.getenv("QDRANT_URL", "http://localhost:6333")
 QDRANT_API_KEY    = os.getenv("QDRANT_API_KEY", None)
-QDRANT_COLLECTION = "customer_support"
+QDRANT_COLLECTION = "banking_support"
 VECTOR_SIZE       = 768
 
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
+# Agent + RAG generation (classify, entity, generator)
+OPENAI_MODEL_NAME = os.getenv("OPENAI_MODEL_NAME", "gpt-4o-mini")
+
+# Fast LPU inference for classification & entity extraction
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+GROQ_MODEL_NAME = os.getenv("GROQ_MODEL_NAME", "qwen/qwen3.8-27b")
+GROQ_BASE_URL = os.getenv("GROQ_BASE_URL", "https://api.groq.com/openai/v1")
+GROQ_GEN_MODEL = os.getenv("GROQ_GEN_MODEL", "openai/gpt-oss-120b")
 
-GROQ_MODEL_NAME = "openai/gpt-oss-120b"  # Updated: llama-3.3-70b-versatile decommissioned
-
-# OpenAI — used ONLY by the DeepEval evaluator judge (offline eval)
-OPENAI_API_KEY    = os.getenv("OPENAI_API_KEY")
-OPENAI_EVAL_MODEL = os.getenv("OPENAI_EVAL_MODEL", "gpt-5-nano")
+# DeepEval offline judge (evaluate_quality.py)
+OPENAI_EVAL_MODEL = os.getenv("OPENAI_EVAL_MODEL", "gpt-oss-120b")
 
 LANGFUSE_PUBLIC_KEY = os.getenv("LANGFUSE_PUBLIC_KEY")
 LANGFUSE_SECRET_KEY = os.getenv("LANGFUSE_SECRET_KEY")
@@ -48,8 +50,10 @@ LANGFUSE_ENABLED = os.getenv("LANGFUSE_ENABLED", "false").lower() == "true"
 REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379")
 
 
-ORDERS_PATH = BASE_DIR / "support-agent-data" / "mock_db" / "orders.json"
+ACCOUNTS_PATH = BASE_DIR / "support-agent-data" / "mock_db" / "accounts.json"
+CARDS_PATH = BASE_DIR / "support-agent-data" / "mock_db" / "cards.json"
+TRANSACTIONS_PATH = BASE_DIR / "support-agent-data" / "mock_db" / "transactions.json"
+KYC_PATH = BASE_DIR / "support-agent-data" / "mock_db" / "kyc.json"
 TICKETS_PATH = BASE_DIR / "support-agent-data" / "mock_db" / "tickets.json"
 USERS_PATH = BASE_DIR / "support-agent-data" / "mock_db" / "users.json"
-TRACKING_PATH = BASE_DIR / "support-agent-data" / "mock_db" / "tracking.json"
 

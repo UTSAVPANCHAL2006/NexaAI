@@ -1,505 +1,482 @@
 {
-  "T-3001": {
-    "user_id": "user_13",
-    "status": "in_progress",
-    "category": "shipping",
-    "order_id": "ORD-1027",
-    "created_at": "2026-06-13",
-    "subject": "Delivery delayed",
-    "description": "Customer reported an issue regarding delivery delayed.",
-    "updates": [
-      {
-        "author": "customer",
-        "message": "Customer reported an issue regarding delivery delayed.",
-        "timestamp": "2026-06-13T10:00:00Z"
-      },
-      {
-        "author": "support_agent",
-        "message": "We are looking into this for you. Please allow 24-48 hours for an update.",
-        "timestamp": "2026-06-13T14:30:00Z"
-      }
-    ]
-  },
-  "T-3002": {
-    "user_id": "user_12",
-    "status": "in_progress",
-    "category": "shipping",
-    "order_id": "ORD-1017",
-    "created_at": "2026-06-16",
-    "subject": "Where is my order?",
-    "description": "Customer reported an issue regarding where is my order?.",
-    "updates": [
-      {
-        "author": "customer",
-        "message": "Customer reported an issue regarding where is my order?.",
-        "timestamp": "2026-06-16T10:00:00Z"
-      },
-      {
-        "author": "support_agent",
-        "message": "We are looking into this for you. Please allow 24-48 hours for an update.",
-        "timestamp": "2026-06-16T14:30:00Z"
-      }
-    ]
-  },
-  "T-3003": {
-    "user_id": "user_6",
-    "status": "open",
-    "category": "billing",
-    "order_id": "ORD-1026",
-    "created_at": "2026-06-09",
-    "subject": "Double charge on my card",
-    "description": "Customer reported an issue regarding double charge on my card.",
-    "updates": [
-      {
-        "author": "customer",
-        "message": "Customer reported an issue regarding double charge on my card.",
-        "timestamp": "2026-06-09T10:00:00Z"
-      }
-    ]
-  },
-  "T-3004": {
-    "user_id": "user_8",
-    "status": "resolved",
-    "category": "shipping",
-    "order_id": "ORD-1023",
-    "created_at": "2026-06-20",
-    "subject": "Change shipping address",
-    "description": "Customer reported an issue regarding change shipping address.",
-    "resolution": "The issue has been successfully resolved according to policy.",
-    "updates": [
-      {
-        "author": "customer",
-        "message": "Customer reported an issue regarding change shipping address.",
-        "timestamp": "2026-06-20T10:00:00Z"
-      },
-      {
-        "author": "support_agent",
-        "message": "We are looking into this for you. Please allow 24-48 hours for an update.",
-        "timestamp": "2026-06-20T14:30:00Z"
-      },
-      {
-        "author": "support_agent",
-        "message": "The issue has been successfully resolved according to policy.",
-        "timestamp": "2026-06-22T00:00:00Z"
-      }
-    ]
-  },
-  "T-3005": {
-    "user_id": "user_6",
-    "status": "escalated",
-    "category": "returns",
-    "order_id": "ORD-1012",
-    "created_at": "2026-06-03",
-    "subject": "Wrong item received",
-    "description": "Customer reported an issue regarding wrong item received.",
-    "updates": [
-      {
-        "author": "customer",
-        "message": "Customer reported an issue regarding wrong item received.",
-        "timestamp": "2026-06-03T10:00:00Z"
-      },
-      {
-        "author": "support_agent",
-        "message": "We are looking into this for you. Please allow 24-48 hours for an update.",
-        "timestamp": "2026-06-03T14:30:00Z"
-      }
-    ]
-  },
-  "T-3006": {
-    "user_id": "user_4",
-    "status": "open",
-    "category": "shipping",
-    "order_id": "ORD-1016",
-    "created_at": "2026-06-07",
-    "subject": "Delivery delayed",
-    "description": "Customer reported an issue regarding delivery delayed.",
-    "updates": [
-      {
-        "author": "customer",
-        "message": "Customer reported an issue regarding delivery delayed.",
-        "timestamp": "2026-06-07T10:00:00Z"
-      }
-    ]
-  },
-  "T-3007": {
-    "user_id": "user_6",
-    "status": "in_progress",
-    "category": "technical",
-    "order_id": "ORD-1020",
-    "created_at": "2026-06-29",
-    "subject": "Cannot reset password",
-    "description": "Customer reported an issue regarding cannot reset password.",
-    "updates": [
-      {
-        "author": "customer",
-        "message": "Customer reported an issue regarding cannot reset password.",
-        "timestamp": "2026-06-29T10:00:00Z"
-      },
-      {
-        "author": "support_agent",
-        "message": "We are looking into this for you. Please allow 24-48 hours for an update.",
-        "timestamp": "2026-06-29T14:30:00Z"
-      }
-    ]
-  },
-  "T-3008": {
-    "user_id": "user_10",
-    "status": "open",
-    "category": "technical",
-    "order_id": "ORD-1030",
-    "created_at": "2026-06-21",
-    "subject": "Cannot reset password",
-    "description": "Customer reported an issue regarding cannot reset password.",
-    "updates": [
-      {
-        "author": "customer",
-        "message": "Customer reported an issue regarding cannot reset password.",
-        "timestamp": "2026-06-21T10:00:00Z"
-      }
-    ]
-  },
-  "T-3009": {
-    "user_id": "user_6",
-    "status": "open",
-    "category": "billing",
-    "order_id": "ORD-1030",
-    "created_at": "2026-06-13",
-    "subject": "Invoice not received",
-    "description": "Customer reported an issue regarding invoice not received.",
-    "updates": [
-      {
-        "author": "customer",
-        "message": "Customer reported an issue regarding invoice not received.",
-        "timestamp": "2026-06-13T10:00:00Z"
-      }
-    ]
-  },
-  "T-3010": {
-    "user_id": "user_13",
-    "status": "in_progress",
-    "category": "technical",
-    "order_id": "ORD-1029",
-    "created_at": "2026-06-06",
-    "subject": "Error 500 on website",
-    "description": "Customer reported an issue regarding error 500 on website.",
-    "updates": [
-      {
-        "author": "customer",
-        "message": "Customer reported an issue regarding error 500 on website.",
-        "timestamp": "2026-06-06T10:00:00Z"
-      },
-      {
-        "author": "support_agent",
-        "message": "We are looking into this for you. Please allow 24-48 hours for an update.",
-        "timestamp": "2026-06-06T14:30:00Z"
-      }
-    ]
-  },
-  "T-3011": {
+  "CASE-3001": {
+    "ticket_id": "CASE-3001",
+    "case_id": "CASE-3001",
     "user_id": "user_7",
-    "status": "resolved",
-    "category": "billing",
-    "order_id": "ORD-1026",
-    "created_at": "2026-07-01",
-    "subject": "Invoice not received",
-    "description": "Customer reported an issue regarding invoice not received.",
-    "resolution": "The issue has been successfully resolved according to policy.",
-    "updates": [
-      {
-        "author": "customer",
-        "message": "Customer reported an issue regarding invoice not received.",
-        "timestamp": "2026-07-01T10:00:00Z"
-      },
-      {
-        "author": "support_agent",
-        "message": "We are looking into this for you. Please allow 24-48 hours for an update.",
-        "timestamp": "2026-07-01T14:30:00Z"
-      },
-      {
-        "author": "support_agent",
-        "message": "The issue has been successfully resolved according to policy.",
-        "timestamp": "2026-07-03T00:00:00Z"
-      }
-    ]
+    "account_id": "ACC-1007",
+    "status": "open",
+    "category": "dispute",
+    "sub_category": "upi_dispute",
+    "priority": "high",
+    "channel": "mobile_app",
+    "subject": "Unauthorized UPI debit - Flipkart",
+    "txn_id": "TXN-9025",
+    "sla_due_by": "2026-09-18T18:00:00+05:30",
+    "assigned_team": "disputes_desk",
+    "created_on": "2026-09-14"
   },
-  "T-3012": {
-    "user_id": "user_12",
-    "status": "escalated",
-    "category": "technical",
-    "order_id": "ORD-1013",
-    "created_at": "2026-06-24",
-    "subject": "Error 500 on website",
-    "description": "Customer reported an issue regarding error 500 on website.",
-    "updates": [
-      {
-        "author": "customer",
-        "message": "Customer reported an issue regarding error 500 on website.",
-        "timestamp": "2026-06-24T10:00:00Z"
-      },
-      {
-        "author": "support_agent",
-        "message": "We are looking into this for you. Please allow 24-48 hours for an update.",
-        "timestamp": "2026-06-24T14:30:00Z"
-      }
-    ]
-  },
-  "T-3013": {
+  "CASE-3002": {
+    "ticket_id": "CASE-3002",
+    "case_id": "CASE-3002",
     "user_id": "user_2",
-    "status": "in_progress",
-    "category": "shipping",
-    "order_id": "ORD-1005",
-    "created_at": "2026-06-01",
-    "subject": "Delivery delayed",
-    "description": "Customer reported an issue regarding delivery delayed.",
-    "updates": [
-      {
-        "author": "customer",
-        "message": "Customer reported an issue regarding delivery delayed.",
-        "timestamp": "2026-06-01T10:00:00Z"
-      },
-      {
-        "author": "support_agent",
-        "message": "We are looking into this for you. Please allow 24-48 hours for an update.",
-        "timestamp": "2026-06-01T14:30:00Z"
-      }
-    ]
-  },
-  "T-3014": {
-    "user_id": "user_3",
-    "status": "escalated",
-    "category": "shipping",
-    "order_id": "ORD-1020",
-    "created_at": "2026-06-27",
-    "subject": "Where is my order?",
-    "description": "Customer reported an issue regarding where is my order?.",
-    "updates": [
-      {
-        "author": "customer",
-        "message": "Customer reported an issue regarding where is my order?.",
-        "timestamp": "2026-06-27T10:00:00Z"
-      },
-      {
-        "author": "support_agent",
-        "message": "We are looking into this for you. Please allow 24-48 hours for an update.",
-        "timestamp": "2026-06-27T14:30:00Z"
-      }
-    ]
-  },
-  "T-3015": {
-    "user_id": "user_10",
-    "status": "escalated",
-    "category": "returns",
-    "order_id": "ORD-1005",
-    "created_at": "2026-06-18",
-    "subject": "How to return?",
-    "description": "Customer reported an issue regarding how to return?.",
-    "updates": [
-      {
-        "author": "customer",
-        "message": "Customer reported an issue regarding how to return?.",
-        "timestamp": "2026-06-18T10:00:00Z"
-      },
-      {
-        "author": "support_agent",
-        "message": "We are looking into this for you. Please allow 24-48 hours for an update.",
-        "timestamp": "2026-06-18T14:30:00Z"
-      }
-    ]
-  },
-  "T-3016": {
-    "user_id": "user_9",
-    "status": "in_progress",
-    "category": "billing",
-    "order_id": "ORD-1001",
-    "created_at": "2026-06-26",
-    "subject": "Double charge on my card",
-    "description": "Customer reported an issue regarding double charge on my card.",
-    "updates": [
-      {
-        "author": "customer",
-        "message": "Customer reported an issue regarding double charge on my card.",
-        "timestamp": "2026-06-26T10:00:00Z"
-      },
-      {
-        "author": "support_agent",
-        "message": "We are looking into this for you. Please allow 24-48 hours for an update.",
-        "timestamp": "2026-06-26T14:30:00Z"
-      }
-    ]
-  },
-  "T-3017": {
-    "user_id": "user_12",
-    "status": "open",
-    "category": "account",
-    "order_id": "ORD-1024",
-    "created_at": "2026-06-30",
-    "subject": "Update email address",
-    "description": "Customer reported an issue regarding update email address.",
-    "updates": [
-      {
-        "author": "customer",
-        "message": "Customer reported an issue regarding update email address.",
-        "timestamp": "2026-06-30T10:00:00Z"
-      }
-    ]
-  },
-  "T-3018": {
-    "user_id": "user_3",
-    "status": "escalated",
-    "category": "shipping",
-    "order_id": "ORD-1027",
-    "created_at": "2026-06-28",
-    "subject": "Change shipping address",
-    "description": "Customer reported an issue regarding change shipping address.",
-    "updates": [
-      {
-        "author": "customer",
-        "message": "Customer reported an issue regarding change shipping address.",
-        "timestamp": "2026-06-28T10:00:00Z"
-      },
-      {
-        "author": "support_agent",
-        "message": "We are looking into this for you. Please allow 24-48 hours for an update.",
-        "timestamp": "2026-06-28T14:30:00Z"
-      }
-    ]
-  },
-  "T-3019": {
-    "user_id": "user_4",
-    "status": "open",
-    "category": "returns",
-    "order_id": "ORD-1007",
-    "created_at": "2026-06-10",
-    "subject": "Wrong item received",
-    "description": "Customer reported an issue regarding wrong item received.",
-    "updates": [
-      {
-        "author": "customer",
-        "message": "Customer reported an issue regarding wrong item received.",
-        "timestamp": "2026-06-10T10:00:00Z"
-      }
-    ]
-  },
-  "T-3020": {
-    "user_id": "user_9",
-    "status": "in_progress",
-    "category": "account",
-    "order_id": "ORD-1011",
-    "created_at": "2026-06-09",
-    "subject": "Update email address",
-    "description": "Customer reported an issue regarding update email address.",
-    "updates": [
-      {
-        "author": "customer",
-        "message": "Customer reported an issue regarding update email address.",
-        "timestamp": "2026-06-09T10:00:00Z"
-      },
-      {
-        "author": "support_agent",
-        "message": "We are looking into this for you. Please allow 24-48 hours for an update.",
-        "timestamp": "2026-06-09T14:30:00Z"
-      }
-    ]
-  },
-  "T-3021": {
-    "user_id": "user_9",
-    "status": "escalated",
-    "category": "shipping",
-    "order_id": "ORD-1002",
-    "created_at": "2026-06-30",
-    "subject": "Change shipping address",
-    "description": "Customer reported an issue regarding change shipping address.",
-    "updates": [
-      {
-        "author": "customer",
-        "message": "Customer reported an issue regarding change shipping address.",
-        "timestamp": "2026-06-30T10:00:00Z"
-      },
-      {
-        "author": "support_agent",
-        "message": "We are looking into this for you. Please allow 24-48 hours for an update.",
-        "timestamp": "2026-06-30T14:30:00Z"
-      }
-    ]
-  },
-  "T-3022": {
-    "user_id": "user_12",
+    "account_id": "ACC-1002",
     "status": "resolved",
-    "category": "technical",
-    "order_id": "ORD-1022",
-    "created_at": "2026-06-19",
-    "subject": "Cannot reset password",
-    "description": "Customer reported an issue regarding cannot reset password.",
-    "resolution": "The issue has been successfully resolved according to policy.",
-    "updates": [
-      {
-        "author": "customer",
-        "message": "Customer reported an issue regarding cannot reset password.",
-        "timestamp": "2026-06-19T10:00:00Z"
-      },
-      {
-        "author": "support_agent",
-        "message": "We are looking into this for you. Please allow 24-48 hours for an update.",
-        "timestamp": "2026-06-19T14:30:00Z"
-      },
-      {
-        "author": "support_agent",
-        "message": "The issue has been successfully resolved according to policy.",
-        "timestamp": "2026-06-21T00:00:00Z"
-      }
-    ]
+    "category": "kyc",
+    "sub_category": "doc_pending",
+    "priority": "high",
+    "channel": "phone",
+    "subject": "Customer case CASE-3002 - kyc",
+    "txn_id": "TXN-9002",
+    "sla_due_by": "2026-09-22T18:00:00+05:30",
+    "assigned_team": "L1_support",
+    "created_on": "2026-09-07"
   },
-  "T-3023": {
-    "user_id": "user_14",
-    "status": "escalated",
-    "category": "account",
-    "order_id": "ORD-1005",
-    "created_at": "2026-06-18",
-    "subject": "Delete my account",
-    "description": "Customer reported an issue regarding delete my account.",
-    "updates": [
-      {
-        "author": "customer",
-        "message": "Customer reported an issue regarding delete my account.",
-        "timestamp": "2026-06-18T10:00:00Z"
-      },
-      {
-        "author": "support_agent",
-        "message": "We are looking into this for you. Please allow 24-48 hours for an update.",
-        "timestamp": "2026-06-18T14:30:00Z"
-      }
-    ]
-  },
-  "T-3024": {
+  "CASE-3003": {
+    "ticket_id": "CASE-3003",
+    "case_id": "CASE-3003",
     "user_id": "user_3",
-    "status": "open",
-    "category": "technical",
-    "order_id": "ORD-1025",
-    "created_at": "2026-06-06",
-    "subject": "App crashing on checkout",
-    "description": "Customer reported an issue regarding app crashing on checkout.",
-    "updates": [
-      {
-        "author": "customer",
-        "message": "Customer reported an issue regarding app crashing on checkout.",
-        "timestamp": "2026-06-06T10:00:00Z"
-      }
-    ]
+    "account_id": "ACC-1003",
+    "status": "closed",
+    "category": "transaction",
+    "sub_category": "neft_delay",
+    "priority": "critical",
+    "channel": "chat",
+    "subject": "Customer case CASE-3003 - transaction",
+    "txn_id": null,
+    "sla_due_by": "2026-09-23T18:00:00+05:30",
+    "assigned_team": "disputes_desk",
+    "created_on": "2026-09-08"
   },
-  "T-3025": {
-    "user_id": "user_10",
+  "CASE-3004": {
+    "ticket_id": "CASE-3004",
+    "case_id": "CASE-3004",
+    "user_id": "user_4",
+    "account_id": "ACC-1004",
     "status": "open",
-    "category": "shipping",
-    "order_id": "ORD-1006",
-    "created_at": "2026-06-05",
-    "subject": "Change shipping address",
-    "description": "Customer reported an issue regarding change shipping address.",
-    "updates": [
-      {
-        "author": "customer",
-        "message": "Customer reported an issue regarding change shipping address.",
-        "timestamp": "2026-06-05T10:00:00Z"
-      }
-    ]
+    "category": "fraud",
+    "sub_category": "unauthorized",
+    "priority": "low",
+    "channel": "mobile_app",
+    "subject": "Customer case CASE-3004 - fraud",
+    "txn_id": "TXN-9004",
+    "sla_due_by": "2026-09-24T18:00:00+05:30",
+    "assigned_team": "L1_support",
+    "created_on": "2026-09-09"
+  },
+  "CASE-3005": {
+    "ticket_id": "CASE-3005",
+    "case_id": "CASE-3005",
+    "user_id": "user_5",
+    "account_id": "ACC-1005",
+    "status": "in_progress",
+    "category": "service_request",
+    "sub_category": "upi_dispute",
+    "priority": "medium",
+    "channel": "branch",
+    "subject": "Customer case CASE-3005 - service_request",
+    "txn_id": null,
+    "sla_due_by": "2026-09-25T18:00:00+05:30",
+    "assigned_team": "L1_support",
+    "created_on": "2026-09-10"
+  },
+  "CASE-3006": {
+    "ticket_id": "CASE-3006",
+    "case_id": "CASE-3006",
+    "user_id": "user_6",
+    "account_id": "ACC-1006",
+    "status": "resolved",
+    "category": "dispute",
+    "sub_category": "card_block",
+    "priority": "high",
+    "channel": "phone",
+    "subject": "Customer case CASE-3006 - dispute",
+    "txn_id": "TXN-9006",
+    "sla_due_by": "2026-09-26T18:00:00+05:30",
+    "assigned_team": "disputes_desk",
+    "created_on": "2026-09-11"
+  },
+  "CASE-3007": {
+    "ticket_id": "CASE-3007",
+    "case_id": "CASE-3007",
+    "user_id": "user_7",
+    "account_id": "ACC-1007",
+    "status": "closed",
+    "category": "card",
+    "sub_category": "doc_pending",
+    "priority": "critical",
+    "channel": "chat",
+    "subject": "Customer case CASE-3007 - card",
+    "txn_id": null,
+    "sla_due_by": "2026-09-27T18:00:00+05:30",
+    "assigned_team": "L1_support",
+    "created_on": "2026-09-12"
+  },
+  "CASE-3008": {
+    "ticket_id": "CASE-3008",
+    "case_id": "CASE-3008",
+    "user_id": "user_8",
+    "account_id": "ACC-1008",
+    "status": "open",
+    "category": "kyc",
+    "sub_category": "neft_delay",
+    "priority": "low",
+    "channel": "mobile_app",
+    "subject": "Customer case CASE-3008 - kyc",
+    "txn_id": "TXN-9008",
+    "sla_due_by": "2026-09-20T18:00:00+05:30",
+    "assigned_team": "L1_support",
+    "created_on": "2026-09-13"
+  },
+  "CASE-3009": {
+    "ticket_id": "CASE-3009",
+    "case_id": "CASE-3009",
+    "user_id": "user_9",
+    "account_id": "ACC-1009",
+    "status": "in_progress",
+    "category": "transaction",
+    "sub_category": "unauthorized",
+    "priority": "medium",
+    "channel": "branch",
+    "subject": "Customer case CASE-3009 - transaction",
+    "txn_id": null,
+    "sla_due_by": "2026-09-21T18:00:00+05:30",
+    "assigned_team": "disputes_desk",
+    "created_on": "2026-09-14"
+  },
+  "CASE-3010": {
+    "ticket_id": "CASE-3010",
+    "case_id": "CASE-3010",
+    "user_id": "user_10",
+    "account_id": "ACC-1010",
+    "status": "resolved",
+    "category": "fraud",
+    "sub_category": "upi_dispute",
+    "priority": "high",
+    "channel": "phone",
+    "subject": "Customer case CASE-3010 - fraud",
+    "txn_id": "TXN-9010",
+    "sla_due_by": "2026-09-22T18:00:00+05:30",
+    "assigned_team": "L1_support",
+    "created_on": "2026-09-05"
+  },
+  "CASE-3011": {
+    "ticket_id": "CASE-3011",
+    "case_id": "CASE-3011",
+    "user_id": "user_11",
+    "account_id": "ACC-1011",
+    "status": "closed",
+    "category": "service_request",
+    "sub_category": "card_block",
+    "priority": "critical",
+    "channel": "chat",
+    "subject": "Customer case CASE-3011 - service_request",
+    "txn_id": null,
+    "sla_due_by": "2026-09-23T18:00:00+05:30",
+    "assigned_team": "L1_support",
+    "created_on": "2026-09-06"
+  },
+  "CASE-3012": {
+    "ticket_id": "CASE-3012",
+    "case_id": "CASE-3012",
+    "user_id": "user_12",
+    "account_id": "ACC-1012",
+    "status": "open",
+    "category": "dispute",
+    "sub_category": "doc_pending",
+    "priority": "low",
+    "channel": "mobile_app",
+    "subject": "Customer case CASE-3012 - dispute",
+    "txn_id": "TXN-9012",
+    "sla_due_by": "2026-09-24T18:00:00+05:30",
+    "assigned_team": "disputes_desk",
+    "created_on": "2026-09-07"
+  },
+  "CASE-3013": {
+    "ticket_id": "CASE-3013",
+    "case_id": "CASE-3013",
+    "user_id": "user_13",
+    "account_id": "ACC-1013",
+    "status": "in_progress",
+    "category": "card",
+    "sub_category": "neft_delay",
+    "priority": "medium",
+    "channel": "branch",
+    "subject": "Customer case CASE-3013 - card",
+    "txn_id": null,
+    "sla_due_by": "2026-09-25T18:00:00+05:30",
+    "assigned_team": "L1_support",
+    "created_on": "2026-09-08"
+  },
+  "CASE-3014": {
+    "ticket_id": "CASE-3014",
+    "case_id": "CASE-3014",
+    "user_id": "user_14",
+    "account_id": "ACC-1014",
+    "status": "resolved",
+    "category": "kyc",
+    "sub_category": "unauthorized",
+    "priority": "high",
+    "channel": "phone",
+    "subject": "Customer case CASE-3014 - kyc",
+    "txn_id": "TXN-9014",
+    "sla_due_by": "2026-09-26T18:00:00+05:30",
+    "assigned_team": "L1_support",
+    "created_on": "2026-09-09"
+  },
+  "CASE-3015": {
+    "ticket_id": "CASE-3015",
+    "case_id": "CASE-3015",
+    "user_id": "user_15",
+    "account_id": "ACC-1015",
+    "status": "closed",
+    "category": "transaction",
+    "sub_category": "upi_dispute",
+    "priority": "critical",
+    "channel": "chat",
+    "subject": "Customer case CASE-3015 - transaction",
+    "txn_id": null,
+    "sla_due_by": "2026-09-27T18:00:00+05:30",
+    "assigned_team": "disputes_desk",
+    "created_on": "2026-09-10"
+  },
+  "CASE-3016": {
+    "ticket_id": "CASE-3016",
+    "case_id": "CASE-3016",
+    "user_id": "user_16",
+    "account_id": "ACC-1016",
+    "status": "open",
+    "category": "fraud",
+    "sub_category": "card_block",
+    "priority": "low",
+    "channel": "mobile_app",
+    "subject": "Customer case CASE-3016 - fraud",
+    "txn_id": "TXN-9016",
+    "sla_due_by": "2026-09-20T18:00:00+05:30",
+    "assigned_team": "L1_support",
+    "created_on": "2026-09-11"
+  },
+  "CASE-3017": {
+    "ticket_id": "CASE-3017",
+    "case_id": "CASE-3017",
+    "user_id": "user_17",
+    "account_id": "ACC-1017",
+    "status": "in_progress",
+    "category": "service_request",
+    "sub_category": "doc_pending",
+    "priority": "medium",
+    "channel": "branch",
+    "subject": "Customer case CASE-3017 - service_request",
+    "txn_id": null,
+    "sla_due_by": "2026-09-21T18:00:00+05:30",
+    "assigned_team": "L1_support",
+    "created_on": "2026-09-12"
+  },
+  "CASE-3018": {
+    "ticket_id": "CASE-3018",
+    "case_id": "CASE-3018",
+    "user_id": "user_18",
+    "account_id": "ACC-1018",
+    "status": "resolved",
+    "category": "dispute",
+    "sub_category": "neft_delay",
+    "priority": "high",
+    "channel": "phone",
+    "subject": "Customer case CASE-3018 - dispute",
+    "txn_id": "TXN-9018",
+    "sla_due_by": "2026-09-22T18:00:00+05:30",
+    "assigned_team": "disputes_desk",
+    "created_on": "2026-09-13"
+  },
+  "CASE-3019": {
+    "ticket_id": "CASE-3019",
+    "case_id": "CASE-3019",
+    "user_id": "user_19",
+    "account_id": "ACC-1019",
+    "status": "closed",
+    "category": "card",
+    "sub_category": "unauthorized",
+    "priority": "critical",
+    "channel": "chat",
+    "subject": "Customer case CASE-3019 - card",
+    "txn_id": null,
+    "sla_due_by": "2026-09-23T18:00:00+05:30",
+    "assigned_team": "L1_support",
+    "created_on": "2026-09-14"
+  },
+  "CASE-3020": {
+    "ticket_id": "CASE-3020",
+    "case_id": "CASE-3020",
+    "user_id": "user_20",
+    "account_id": "ACC-1020",
+    "status": "open",
+    "category": "kyc",
+    "sub_category": "upi_dispute",
+    "priority": "low",
+    "channel": "mobile_app",
+    "subject": "Customer case CASE-3020 - kyc",
+    "txn_id": "TXN-9020",
+    "sla_due_by": "2026-09-24T18:00:00+05:30",
+    "assigned_team": "L1_support",
+    "created_on": "2026-09-05"
+  },
+  "CASE-3021": {
+    "ticket_id": "CASE-3021",
+    "case_id": "CASE-3021",
+    "user_id": "user_21",
+    "account_id": "ACC-1021",
+    "status": "in_progress",
+    "category": "transaction",
+    "sub_category": "card_block",
+    "priority": "medium",
+    "channel": "branch",
+    "subject": "Customer case CASE-3021 - transaction",
+    "txn_id": null,
+    "sla_due_by": "2026-09-25T18:00:00+05:30",
+    "assigned_team": "disputes_desk",
+    "created_on": "2026-09-06"
+  },
+  "CASE-3022": {
+    "ticket_id": "CASE-3022",
+    "case_id": "CASE-3022",
+    "user_id": "user_22",
+    "account_id": "ACC-1022",
+    "status": "resolved",
+    "category": "fraud",
+    "sub_category": "doc_pending",
+    "priority": "high",
+    "channel": "phone",
+    "subject": "Customer case CASE-3022 - fraud",
+    "txn_id": "TXN-9022",
+    "sla_due_by": "2026-09-26T18:00:00+05:30",
+    "assigned_team": "L1_support",
+    "created_on": "2026-09-07"
+  },
+  "CASE-3023": {
+    "ticket_id": "CASE-3023",
+    "case_id": "CASE-3023",
+    "user_id": "user_23",
+    "account_id": "ACC-1023",
+    "status": "closed",
+    "category": "service_request",
+    "sub_category": "neft_delay",
+    "priority": "critical",
+    "channel": "chat",
+    "subject": "Customer case CASE-3023 - service_request",
+    "txn_id": null,
+    "sla_due_by": "2026-09-27T18:00:00+05:30",
+    "assigned_team": "L1_support",
+    "created_on": "2026-09-08"
+  },
+  "CASE-3024": {
+    "ticket_id": "CASE-3024",
+    "case_id": "CASE-3024",
+    "user_id": "user_24",
+    "account_id": "ACC-1024",
+    "status": "open",
+    "category": "dispute",
+    "sub_category": "unauthorized",
+    "priority": "low",
+    "channel": "mobile_app",
+    "subject": "Customer case CASE-3024 - dispute",
+    "txn_id": "TXN-9024",
+    "sla_due_by": "2026-09-20T18:00:00+05:30",
+    "assigned_team": "disputes_desk",
+    "created_on": "2026-09-09"
+  },
+  "CASE-3025": {
+    "ticket_id": "CASE-3025",
+    "case_id": "CASE-3025",
+    "user_id": "user_25",
+    "account_id": "ACC-1025",
+    "status": "in_progress",
+    "category": "card",
+    "sub_category": "upi_dispute",
+    "priority": "medium",
+    "channel": "branch",
+    "subject": "Customer case CASE-3025 - card",
+    "txn_id": null,
+    "sla_due_by": "2026-09-21T18:00:00+05:30",
+    "assigned_team": "L1_support",
+    "created_on": "2026-09-10"
+  },
+  "CASE-3026": {
+    "ticket_id": "CASE-3026",
+    "case_id": "CASE-3026",
+    "user_id": "user_26",
+    "account_id": "ACC-1026",
+    "status": "resolved",
+    "category": "kyc",
+    "sub_category": "card_block",
+    "priority": "high",
+    "channel": "phone",
+    "subject": "Customer case CASE-3026 - kyc",
+    "txn_id": "TXN-9026",
+    "sla_due_by": "2026-09-22T18:00:00+05:30",
+    "assigned_team": "L1_support",
+    "created_on": "2026-09-11"
+  },
+  "CASE-3027": {
+    "ticket_id": "CASE-3027",
+    "case_id": "CASE-3027",
+    "user_id": "user_27",
+    "account_id": "ACC-1027",
+    "status": "closed",
+    "category": "transaction",
+    "sub_category": "doc_pending",
+    "priority": "critical",
+    "channel": "chat",
+    "subject": "Customer case CASE-3027 - transaction",
+    "txn_id": null,
+    "sla_due_by": "2026-09-23T18:00:00+05:30",
+    "assigned_team": "disputes_desk",
+    "created_on": "2026-09-12"
+  },
+  "CASE-3028": {
+    "ticket_id": "CASE-3028",
+    "case_id": "CASE-3028",
+    "user_id": "user_28",
+    "account_id": "ACC-1028",
+    "status": "open",
+    "category": "fraud",
+    "sub_category": "neft_delay",
+    "priority": "low",
+    "channel": "mobile_app",
+    "subject": "Customer case CASE-3028 - fraud",
+    "txn_id": "TXN-9028",
+    "sla_due_by": "2026-09-24T18:00:00+05:30",
+    "assigned_team": "L1_support",
+    "created_on": "2026-09-13"
+  },
+  "CASE-3029": {
+    "ticket_id": "CASE-3029",
+    "case_id": "CASE-3029",
+    "user_id": "user_29",
+    "account_id": "ACC-1029",
+    "status": "in_progress",
+    "category": "service_request",
+    "sub_category": "unauthorized",
+    "priority": "medium",
+    "channel": "branch",
+    "subject": "Customer case CASE-3029 - service_request",
+    "txn_id": null,
+    "sla_due_by": "2026-09-25T18:00:00+05:30",
+    "assigned_team": "L1_support",
+    "created_on": "2026-09-14"
+  },
+  "CASE-3030": {
+    "ticket_id": "CASE-3030",
+    "case_id": "CASE-3030",
+    "user_id": "user_30",
+    "account_id": "ACC-1030",
+    "status": "resolved",
+    "category": "dispute",
+    "sub_category": "upi_dispute",
+    "priority": "high",
+    "channel": "phone",
+    "subject": "Customer case CASE-3030 - dispute",
+    "txn_id": "TXN-9030",
+    "sla_due_by": "2026-09-26T18:00:00+05:30",
+    "assigned_team": "disputes_desk",
+    "created_on": "2026-09-05"
   }
 }

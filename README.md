@@ -1,322 +1,295 @@
-# 🤖 Agentic Customer Support AI
+# NexaBank AI — Intelligent Customer Support Agent
 
-An intelligent, production-ready customer support chatbot built with **LangGraph**, **FastAPI**, **Streamlit**, and **Redis**. The agent uses a multi-node pipeline to classify, route, retrieve, and respond to customer queries — all in real-time via streaming.
+[![Python 3.12](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.115-green.svg)](https://fastapi.tiangolo.com/)
+[![LangGraph](https://img.shields.io/badge/LangGraph-0.3-orange.svg)](https://langchain-ai.github.io/langgraph/)
+[![Qdrant](https://img.shields.io/badge/Qdrant-Cloud-red.svg)](https://qdrant.tech/)
+[![Redis](https://img.shields.io/badge/Redis-Stack%207.2-red.svg)](https://redis.io/)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black.svg)](https://nextjs.org/)
 
----
-
-## 📋 Table of Contents
-
-- [Architecture Overview](#-architecture-overview)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Agent Pipeline](#-agent-pipeline)
-- [Features](#-features)
-- [Getting Started](#-getting-started)
-- [Environment Variables](#-environment-variables)
-- [Running the Project](#-running-the-project)
-- [API Reference](#-api-reference)
+An enterprise-grade, deterministic agentic support system for retail banking. Powered by **LangGraph state graphs**, **Hybrid RAG (Qdrant + BM25)**, **Redis multi-turn memory checkpointers**, and **18 mock core-banking tools**.
 
 ---
 
-## 🏗️ Architecture Overview
+## 1. Project Overview
 
-```
-User (Streamlit UI)
-        │
-        ▼
-FastAPI /chat endpoint   ◄─── Rate Limiter (Redis, 5 req/60s per IP)
-        │
-        ▼
-   LangGraph Pipeline
-        │
-  ┌─────┴──────────────────────────────────────────────┐
-  │  Guard → Classify → EntityExtractor → Retriever    │
-  │                                    → Tool          │
-  │                                    → Generator     │
-  └────────────────────────────────────────────────────┘
-        │
-  Redis (RedisSaver) ◄── Persistent conversation memory per thread_id
-        │
-        ▼
-  Streaming Response back to Streamlit
-```
+NexaBank AI is an autonomous, production-oriented customer support engine designed specifically for retail banking institutions. It handles everyday banking customer requests including account balance lookups, emergency card freezes, failed transaction root-cause troubleshooting, KYC verification guidance, dispute ticket creation, and regulatory policy questions (NPCI UPI guidelines, NEFT cutoff timings, RBI chargeback rules).
+
+### Problem Statement
+Traditional rule-based banking chatbots are brittle, unable to maintain multi-turn context (e.g., remembering which account was referenced when the user says "block my card"), and prone to failure when complex intent routing is needed. Conversely, naive generative LLM wrappers suffer from hallucinations, high latency, security vulnerabilities (prompt injection), and lack deterministic state control.
+
+### Solution
+NexaBank AI solves this with a **deterministic 6-node LangGraph state machine**:
+1. **Zero-LLM Guardrail Node**: Rejects prompt injections and off-topic chatter with 0ms LLM overhead.
+2. **Structured Intent Classifier**: Categorizes requests, determines priority, and selects appropriate tools or RAG actions.
+3. **Deterministic Entity Extractor**: Pulls banking identifiers (`ACC-`, `CRD-`, `TXN-`, `CASE-`, `user_`) with regex fallbacks and reuses session state.
+4. **Hybrid RAG Engine**: Combines 768-D dense vector embeddings (`BAAI/bge-base-en-v1.5`) via Qdrant Cloud with sparse BM25 lexical keyword matching (0.5 / 0.5 ensemble).
+5. **Core-Banking Tool Layer**: Executes atomic reads and disk-persisted mutations across 6 banking domains.
+6. **Grounded Generator with PII Masking**: Synthesizes verified answers strictly grounded in retrieved documents or tool results, masking full PAN, PIN, and OTP.
 
 ---
 
-## 🛠️ Tech Stack
+## 2. Main Features
 
-| Layer | Technology |
+- **Multi-Turn Context Persistence**: Backed by `RedisSaver` checkpoints. Follow-up phrases like *"What about its recent transactions?"* or *"Block that card"* resolve automatically.
+- **Deterministic Prompt Injection Guard**: Pattern-based security shield intercepting adversarial inputs without calling the LLM.
+- **Hybrid Vector + Keyword Search**: Dense semantic search combined with sparse lexical search to reliably retrieve exact banking clauses, fees, and past resolved cases.
+- **18 Atomic Banking Tools**:
+  - **Account Tools**: Balance inquiry, account details, recent transactions, spending summary.
+  - **Card Tools**: Card status lookup, emergency card freeze, report lost/stolen, replacement order.
+  - **Transaction Tools**: Transaction status, failure diagnostics, pending transfer tracking, duplicate check.
+  - **KYC Tools**: Verification status, missing document checklist, customer tier lookup.
+  - **Dispute & Case Tools**: Case status check, past resolved case lookup, customer dispute creation.
+  - **User Tools**: Customer profile retrieval, registered email lookup.
+- **Token Streaming HTTP API**: FastAPI endpoint streaming text chunks directly to clients.
+- **Sliding-Window Rate Limiting**: Redis middleware limiting requests to 5 requests per 60 seconds per thread or IP.
+- **Comprehensive Quality Evaluation**: DeepEval evaluation suite measuring Answer Relevancy, Hallucination, and Contextual Precision with an LLM Judge.
+
+---
+
+## 3. Technology Stack
+
+| Layer | Technologies |
 |---|---|
-| **LLM** | Groq · `llama-3.3-70b-versatile` |
-| **Agent Orchestration** | LangGraph (StateGraph) |
-| **RAG - Embeddings** | HuggingFace · `BAAI/bge-base-en-v1.5` |
-| **RAG - Vector Store** | Qdrant Cloud |
-| **Backend API** | FastAPI + Uvicorn |
-| **Frontend** | Streamlit |
-| **Memory** | Redis Stack (RedisSaver — persistent across restarts) |
-| **Rate Limiting** | Redis (5 requests per 60 seconds per IP) |
-| **Observability** | Langfuse |
-| **Containerization** | Docker + Docker Compose |
+| **Frontend Clients** | • Next.js 16 (React 19, TypeScript, Framer Motion)<br>• Streamlit 1.x (Alternative Python UI) |
+| **Backend API** | • FastAPI 0.115<br>• Uvicorn ASGI Server<br>• Starlette Middleware |
+| **Agent Framework** | • LangGraph 0.3 (StateGraph, Conditional Edges)<br>• LangChain Core / Community |
+| **Vector Database & Search** | • Qdrant Cloud (Cosine Similarity, 768-D)<br>• Rank-BM25 (Sparse lexical search)<br>• LangChain EnsembleRetriever (0.5 / 0.5 weights) |
+| **Embedding Model** | • `BAAI/bge-base-en-v1.5` (HuggingFace Embeddings) |
+| **LLM Engine** | • OpenAI `gpt-4o-mini` (Structured Outputs & Grounded Generation) |
+| **State Memory & Checkpointing** | • Redis Stack 7.2 (`langgraph-checkpoint-redis` via `RedisSaver`) |
+| **Testing & Evaluation** | • Pytest (Unit & Integration tests)<br>• DeepEval (LLM evaluation metrics) |
+| **Observability & Tracing** | • Langfuse (Optional distributed tracing) |
+| **Infrastructure** | • Docker & Docker Compose |
 
 ---
 
-## 📁 Project Structure
+## 4. Architecture Diagram
+
+```mermaid
+flowchart TD
+    User([Customer / Client]) -->|HTTP POST /chat| API[FastAPI Gateway :8000]
+    API -->|Rate Limit Check 5req/60s| RedisLimit[(Redis Cache :6379)]
+    API -->|Invoke LangGraph| Graph[AgentGraph State Machine]
+
+    subgraph LangGraph Pipeline
+        START([START]) --> Guard[01. Guard Node\nZero-LLM Regex Filter]
+        Guard -->|pass| Classify[02. Classify Node\nStructured Intent & Tool Selection]
+        Guard -->|blocked| Generator
+        
+        Classify --> Entity[03. Entity Node\nRegex + LLM Parameter Extraction]
+        Entity --> Router{04. Dynamic Router\naction edge}
+        
+        Router -->|retrieve| Retriever[05a. Retriever Node\nQdrant Hybrid + BM25]
+        Router -->|call_tool| Tools[05b. Tool Node\n18 Core Banking Operations]
+        Router -->|clarify / escalate / respond| Generator
+        
+        Retriever --> Generator[06. Generator Node\nGPT-4o-mini + PII Guardrail]
+        Tools --> Generator
+        Generator --> Checkpoint[(RedisSaver Checkpointer)]
+        Generator --> END([END])
+    end
+
+    subgraph External & Storage Services
+        Retriever <--> Qdrant[(Qdrant Cloud 768-D)]
+        Tools <--> MockDB[(Mock DB JSON Stores\naccounts, cards, txns, kyc, tickets, users)]
+        Checkpoint <--> RedisLimit
+    end
+
+    Generator -->|Streaming Tokens| API
+    API -->|Chunked HTTP Response| User
+```
+
+---
+
+## 5. Project Structure
 
 ```
 .
 ├── app/
 │   ├── agents/
-│   │   ├── graph.py              # LangGraph orchestrator — compiles the full pipeline
-│   │   ├── state.py              # AgentState TypedDict (shared across all nodes)
-│   │   ├── router.py             # Conditional edge logic after entity extraction
 │   │   ├── nodes/
-│   │   │   ├── guard_node.py     # LLM-based safety classifier (support/blocked/injection)
-│   │   │   ├── classify_node.py  # Classifies ticket → category, urgency, action, tool_name
-│   │   │   ├── entity_node.py    # Extracts order_id, ticket_id, user_id from message
-│   │   │   ├── retriever_node.py # Runs RAG retrieval from Qdrant
-│   │   │   ├── tool_node.py      # Executes mock DB tools (orders, tickets, users)
-│   │   │   └── generater_node.py # Builds final prompt and calls LLM
-│   │   └── tools/
-│   │       ├── order_tool.py     # track_order, cancel_order, check_return_eligibility
-│   │       ├── ticket_tool.py    # check_ticket_status, get_ticket
-│   │       └── user_tool.py      # get_user
-│   ├── rag/
-│   │   ├── loader.py             # Loads knowledge base + resolved tickets JSON
-│   │   ├── chunk.py              # Splits documents into chunks
-│   │   ├── embedding.py          # HuggingFace embedding model wrapper
-│   │   ├── qdrant.py             # Qdrant Cloud client (creates/uploads collection)
-│   │   ├── retriever.py          # Qdrant similarity search retriever
-│   │   ├── generate.py           # Generator: stream_generate() for streaming responses
-│   │   ├── llm.py                # ChatGroq LLM factory
-│   │   └── bm25.py               # BM25 retriever (optional hybrid search)
-│   ├── middleware/
-│   │   └── rate_limiter.py       # Redis-based rate limiting middleware (5 req/60s)
-│   ├── prompts/                  # All LLM prompts (classify, entity, generate, guard)
-│   ├── schema/                   # Pydantic schemas for structured LLM outputs
+│   │   │   ├── guard_node.py          # Zero-LLM injection & keyword filter
+│   │   │   ├── classify_node.py       # Structured intent & action classifier
+│   │   │   ├── entity_node.py         # Account/card/case parameter extractor
+│   │   │   ├── retriever_node.py      # Qdrant + BM25 hybrid search caller
+│   │   │   ├── tool_node.py           # Core-banking tool execution dispatcher
+│   │   │   └── generater_node.py      # Grounded LLM generator with PII masking
+│   │   ├── tools/
+│   │   │   ├── account_tool.py        # Balances, spending & statement tools
+│   │   │   ├── card_tool.py           # Card status, freeze & replacement tools
+│   │   │   ├── transaction_tool.py    # Status, failure analysis & duplicate checks
+│   │   │   ├── kyc_tool.py            # KYC status & missing document tools
+│   │   │   ├── ticket_tool.py         # Dispute creation & ticket lookup tools
+│   │   │   ├── user_tool.py           # Customer profile tools
+│   │   │   └── persist.py             # Atomic JSON file writer for state mutations
+│   │   ├── graph.py                   # StateGraph assembly & Redis checkpointer
+│   │   ├── router.py                  # Conditional edge router function
+│   │   ├── session_context.py         # Multi-turn context serializer
+│   │   └── state.py                   # TypedDict Agentstate definition
+│   ├── common/
+│   │   ├── custom_exception.py        # Centralized exception wrapper
+│   │   └── logger.py                  # Standardized logging configuration
 │   ├── config/
-│   │   └── config.py             # All env var loading and constants
-│   ├── api.py                    # FastAPI app, /chat streaming endpoint
-│   └── main.py                   # Streamlit UI with multi-chat sidebar
+│   │   └── config.py                  # Environment variables & path constants
+│   ├── middleware/
+│   │   └── rate_limiter.py            # Sliding-window Redis rate limiting middleware
+│   ├── prompts/
+│   │   ├── classify_prompt.py         # Intent classification prompt template
+│   │   ├── entity_prompt.py           # Entity extraction prompt template
+│   │   └── generate_prompt.py         # Grounded generation prompt template
+│   ├── rag/
+│   │   ├── bm25.py                    # BM25 sparse keyword retriever
+│   │   ├── chunk.py                   # Recursive text chunking (500 chars / 100 overlap)
+│   │   ├── embedding.py               # BGE-base-en-v1.5 embedding loader
+│   │   ├── generate.py                # LangChain generation chain wrapper
+│   │   ├── llm.py                     # ChatOpenAI factory with temperature=0
+│   │   ├── loader.py                  # Policy markdown & resolved ticket loader
+│   │   ├── qdrant.py                  # Qdrant client, collection creation & indexing
+│   │   └── retriever.py               # EnsembleRetriever combining dense & BM25
+│   ├── schema/
+│   │   ├── classify.py                # Pydantic schema for classification output
+│   │   └── entity.py                  # Pydantic schema for entity extraction
+│   ├── api.py                         # FastAPI backend application & /chat route
+│   └── main.py                        # Streamlit chat application
 ├── support-agent-data/
-│   ├── knowledge_base/           # Policy docs, FAQs, resolved tickets
-│   ├── mock_db/                  # JSON mock database (orders, tickets, users, tracking)
-│   │   ├── orders.json           # Mock order data
-│   │   ├── tickets.json          # Enriched mock tickets with full conversation history
-│   │   ├── tracking.json         # Realistic package tracking events (FedEx, UPS, etc.)
-│   │   └── users.json            # Mock user profiles
+│   ├── knowledge_base/                # Markdown banking policy documents
+│   │   ├── account_security_policy.md
+│   │   ├── card_policy.md
+│   │   ├── charges_fees_policy.md
+│   │   ├── faqs.md
+│   │   ├── fraud_dispute_policy.md
+│   │   ├── kyc_policy.md
+│   │   ├── refund_policy.md
+│   │   ├── transaction_policy.md
+│   │   ├── upi_policy.md
+│   │   └── past_tickets/resolved_tickets.json
+│   └── mock_db/                       # Core banking JSON seed databases
+│       ├── accounts.json
+│       ├── cards.json
+│       ├── kyc.json
+│       ├── tickets.json
+│       ├── transactions.json
+│       └── users.json
 ├── tests/
-│   ├── test_agent.py
-│   ├── test_graph.py
-│   ├── test_rag_pipeline.py
-│   └── test_tool_nodes.py
-├── Dockerfile
-├── docker-compose.yml
-├── .dockerignore
-├── requirements.txt
-└── .env
+│   ├── eval_dataset.json              # 50 golden banking test scenarios
+│   ├── evaluate_quality.py            # DeepEval LLM judge evaluation script
+│   ├── node_eval_results.json         # Per-node accuracy benchmarks
+│   └── test_banking_static.py         # Static regression & integration test suite
+├── web/                               # Next.js 16 Web Application
+│   ├── src/app/                       # App router pages & API proxy
+│   └── src/components/                # UI components & Live Chat Copilot
+├── docker-compose.yml                 # Multi-container orchestration (Redis, API, UI)
+├── Dockerfile                         # Container definition for Python stack
+├── requirements.txt                   # Python dependencies
+└── README.md                          # Project documentation
 ```
 
 ---
 
-## 🔀 Agent Pipeline
-
-Every user message travels through this exact pipeline:
-
-### 1. `Guard Node`
-- **Type:** LLM classifier (Groq, temperature=0)
-- **Purpose:** Safety gate — classifies message as `support`, `blocked`, or `injection`
-- Blocked messages are short-circuited directly to the Generator with a canned refusal response
-- Injection attempts (prompt jailbreaks) are also blocked immediately
-
-### 2. `Classify Node`
-- **Type:** LLM with structured output (`ClassificationSchema`)
-- **Extracts:** `category`, `urgency`, `sentiment`, `action`, `tool_name`
-- **Action options:** `retrieve`, `call_tool`, `clarify`, `escalate`, `respond`
-
-### 3. `Entity Extractor Node`
-- **Type:** LLM with structured output (`EntitySchema`)
-- **Extracts:** `order_id`, `ticket_id`, `user_id` from the user's message
-- Looks at the last 4 messages of history to catch IDs mentioned earlier in the conversation
-
-### 4. Router (Conditional Edge)
-- Routes to one of three paths based on the `action` from Classify:
-  - `retrieve` → **Retriever Node** (RAG/FAQ)
-  - `call_tool` → **Tool Node** (live DB lookup)
-  - `clarify` / `escalate` / `respond` → **Generator Node** (direct reply)
-
-### 5a. `Retriever Node`
-- Queries Qdrant Cloud with the user's message
-- Returns the top-k most relevant policy/FAQ document chunks
-
-### 5b. `Tool Node`
-- Executes one of 6 mock DB tools based on `tool_name`:
-  - `track_order`, `cancel_order`, `check_return_eligibility`
-  - `check_ticket_status`, `get_ticket`, `get_user`
-
-### 6. `Generator Node`
-- Builds the final prompt combining: ticket, action, history, documents, tool results
-- Calls Groq LLM and **streams tokens** back to the FastAPI endpoint
-
----
-
-## ✨ Features
-
-| Feature | Implementation | Status |
-|---|---|---|
-| 🛡️ Safety Guard | LLM-based (blocks off-topic + injection attacks) | ✅ Active |
-| 🔀 Smart Routing | 5 routing paths based on intent classification | ✅ Active |
-| 🔍 Hybrid RAG | Qdrant Cloud dense + BM25 sparse ensemble retrieval | ✅ Active |
-| 🔧 Tool Calling | 6 structured tools for order/ticket/user lookups | ✅ Active |
-| 💬 Streaming | Real-time token streaming (`StreamingResponse`) | ✅ Active |
-| 🧠 Persistent Memory | Redis Stack (`RedisSaver`) — survives server restarts | ✅ Active |
-| 🚦 Rate Limiting | Redis middleware — 5 requests / 60 seconds per IP | ✅ Active |
-| 🚀 CI/CD Pipeline | Automated GitHub Actions deployment to AWS EC2 | ✅ Active |
-| 🔭 Observability | Langfuse tracing (toggleable via `LANGFUSE_ENABLED`) | ✅ Active |
-| 📦 Realistic Data | Enriched `tickets.json` histories and chronologic `tracking.json` events | ✅ Active |
-| 🐳 Docker | Full docker-compose stack (Redis + API + UI) | ✅ Active |
-
----
-
-## 🚀 Getting Started
+## 6. Setup & Local Development
 
 ### Prerequisites
-- Python 3.10+
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running
-- A [Groq API key](https://console.groq.com/)
-- A [Qdrant Cloud](https://cloud.qdrant.io/) cluster URL and API key
+- Python 3.11 or 3.12
+- Node.js 18+ (for Next.js web application)
+- Docker & Docker Compose
+- OpenAI API Key
+- Qdrant Cloud Cluster URL & API Key
 
-### 1. Clone and set up environment
-
-```bash
-git clone <your-repo-url>
-cd <project-folder>
-
-python -m venv venv
-source venv/bin/activate      # macOS/Linux
-# venv\Scripts\activate       # Windows
-
-pip install -r requirements.txt
-```
-
-### 2. Create your `.env` file
-
+### Environment Configuration
+Copy the example environment file and fill in your API credentials:
 ```bash
 cp .env.example .env
-# then fill in your keys (see Environment Variables section below)
 ```
+Ensure your `.env` contains:
+```ini
+OPENAI_API_KEY=sk-...
+OPENAI_MODEL_NAME=gpt-4o-mini
+OPENAI_EVAL_MODEL=gpt-4o-mini
 
----
+QDRANT_URL=https://your-cluster-id.qdrant.tech:6333
+QDRANT_API_KEY=your-qdrant-api-key
 
-## 🔑 Environment Variables
-
-Create a `.env` file in the project root:
-
-```env
-# Required
-GROQ_API_KEY=gsk_...
-
-# Qdrant Cloud
-QDRANT_URL=https://your-cluster.qdrant.io
-QDRANT_API_KEY=your_qdrant_key
-
-# Redis (auto-handled by docker-compose, only needed for local dev)
 REDIS_URL=redis://localhost:6379
-
-# Optional: Langfuse Observability
-LANGFUSE_PUBLIC_KEY=pk-lf-...
-LANGFUSE_SECRET_KEY=sk-lf-...
-LANGFUSE_HOST=https://us.cloud.langfuse.com
-LANGFUSE_ENABLED=true
+LANGFUSE_ENABLED=false
 ```
+
+### Running with Docker Compose (Recommended)
+```bash
+docker compose up --build -d
+```
+Services will be available at:
+- **FastAPI Backend**: `http://localhost:8000`
+- **FastAPI Health Check**: `http://localhost:8000/health`
+- **Streamlit Client**: `http://localhost:8501`
+- **RedisInsight UI**: `http://localhost:8001`
+
+### Running Locally without Docker
+
+1. **Start Redis**:
+   ```bash
+   redis-server
+   ```
+
+2. **Setup Python Virtual Environment & Install Dependencies**:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   pip install --upgrade pip
+   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+   pip install -r requirements.txt
+   ```
+
+3. **Start FastAPI Backend**:
+   ```bash
+   uvicorn app.api:app --host 0.0.0.0 --port 8000 --reload
+   ```
+
+4. **Start Next.js Frontend**:
+   ```bash
+   cd web
+   npm install
+   npm run dev -- --port 3001
+   ```
+   Open `http://localhost:3001` to use the interactive Banking Assistant.
 
 ---
 
-## ▶️ Running the Project
+## 7. Testing & Quality Evaluation
 
-### Option A — Docker Compose (Recommended)
-
-Runs everything (Redis, FastAPI, Streamlit) in one command:
-
+### 1. Static & Functional Tests (Pytest)
+Runs deterministic checks verifying mock DB integrity, text chunking, tool node dispatching, user resolution, and security guardrail blocking:
 ```bash
-docker-compose up --build -d
+pytest tests/test_banking_static.py -v
 ```
 
-| Service | URL |
-|---|---|
-| Streamlit UI | http://localhost:8501 |
-| FastAPI API | http://localhost:8000 |
-| Redis UI (RedisInsight) | http://localhost:8001 |
-
-To stop everything:
+### 2. DeepEval Quality Evaluation (LLM Judge)
+Evaluates 50 production queries across Answer Relevancy, Hallucination, and Contextual Precision:
 ```bash
-docker-compose down
+python tests/evaluate_quality.py
 ```
+Outputs detailed per-node accuracy metrics to `tests/node_eval_results.json`.
 
 ---
 
-### Option C — AWS EC2 Deployment (Automated via CI/CD)
+## 8. Security & Guardrails
 
-The project includes a fully automated **GitHub Actions** pipeline (`.github/workflows/deploy.yml`) that deploys directly to an AWS EC2 instance.
-
-For detailed instructions on setting up the EC2 server (including Swap File configuration for the Free Tier) and configuring the required GitHub Secrets (`EC2_HOST`, `EC2_USERNAME`, `EC2_SSH_KEY`, `ENV_FILE`), please refer to the [AWS Deployment Guide](AWS_DEPLOYMENT.md).
-
-Once configured, any push to the `main` branch will automatically deploy the latest changes to your live server.
-
----
-
-### Option B — Local Development
-
-Run 3 separate terminals:
-
-**Terminal 1 — Redis Stack**
-```bash
-docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:latest
-```
-
-**Terminal 2 — FastAPI Backend**
-```bash
-source venv/bin/activate
-uvicorn app.api:app --reload
-```
-
-**Terminal 3 — Streamlit Frontend**
-```bash
-source venv/bin/activate
-streamlit run app/main.py
-```
+- **Zero-LLM Input Screening**: Regex detection of prompt injection patterns (`ignore previous instructions`, `dan mode`, `jailbreak`) before LLM invocation.
+- **PII & Data Masking**: Strict system prompt constraints preventing the generation of full PAN, CVV, PIN, or OTP in responses.
+- **Sliding-Window Rate Limiter**: 5 requests per 60 seconds per thread/IP via Redis middleware (`app/middleware/rate_limiter.py`).
+- **Grounded Responses**: The generator is constrained to answer exclusively using tool execution results or retrieved policy documents.
 
 ---
 
-## 📡 API Reference
+## 9. Limitations & Future Improvements
 
-### `POST /chat`
+### Current Limitations
+- **Mock DB Layer**: Banking data is stored in local JSON files rather than an ACID-compliant relational database (PostgreSQL).
+- **Synchronous Graph Execution**: Node transitions run in a synchronous loop before streaming tokens at the HTTP layer.
+- **No KYC File Ingestion**: Missing KYC documents cannot be uploaded in chat; customers are given procedural checklists.
 
-Streams a response from the support agent.
-
-**Request body:**
-```json
-{
-  "ticket": "My order ORD-1011 is missing",
-  "thread_id": "unique-session-id"
-}
-```
-
-**Response:** `text/plain` stream (chunked tokens)
-
-**Rate limit:** 5 requests per 60 seconds per IP → returns `HTTP 429` when exceeded.
-
-**Example:**
-```bash
-curl -X POST http://localhost:8000/chat \
-  -H "Content-Type: application/json" \
-  -d '{"ticket": "Where is my order ORD-1011?", "thread_id": "test-123"}'
-```
-
----
-
-## 🧪 Running Tests
-
-```bash
-source venv/bin/activate
-pytest tests/ -v
-```
+### Production Roadmap
+- Connect tools to real Core-Banking Systems (Finacle/TCS BaNCS/Mambu) via mTLS REST APIs.
+- Migrate JSON checkpointer to Redis Enterprise with automated TTL cleanup.
+- Introduce bi-directional WebSocket support with client-side speech transcription.
+- Implement automated human agent handoff via webhook queues when `action: "escalate"`.

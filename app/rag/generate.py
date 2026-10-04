@@ -19,9 +19,13 @@ class Generator:
         documents=None,
         tool_result=None,
         history=None,
-        order_id=None,
-        ticket_id=None,
+        account_id=None,
+        case_id=None,
+        card_last4=None,
+        txn_id=None,
     ):
+        if history is None:
+            history = []
 
         if documents:
             context = "\n\n".join(
@@ -42,8 +46,10 @@ class Generator:
             "documents": context,
             "tool_result": str(tool_result),
             "history": history,
-            "order_id": str(order_id) if order_id else "None",
-            "ticket_id": str(ticket_id) if ticket_id else "None"
+            "account_id": str(account_id) if account_id else "None",
+            "case_id": str(case_id) if case_id else "None",
+            "card_last4": str(card_last4) if card_last4 else "None",
+            "txn_id": str(txn_id) if txn_id else "None"
         }
 
         response = chain.invoke(payload)
@@ -57,9 +63,14 @@ class Generator:
         documents=None,
         tool_result=None,
         history=None,
-        order_id=None,
-        ticket_id=None,
+        account_id=None,
+        case_id=None,
+        card_last4=None,
+        txn_id=None,
     ):
+        if history is None:
+            history = []
+
         if documents:
             context = "\n\n".join(doc.page_content for doc in documents)
         else:
@@ -76,8 +87,10 @@ class Generator:
             "documents": context,
             "tool_result": str(tool_result),
             "history": history,
-            "order_id": str(order_id) if order_id else "None",
-            "ticket_id": str(ticket_id) if ticket_id else "None"
+            "account_id": str(account_id) if account_id else "None",
+            "case_id": str(case_id) if case_id else "None",
+            "card_last4": str(card_last4) if card_last4 else "None",
+            "txn_id": str(txn_id) if txn_id else "None"
         }
 
         for chunk in chain.stream(payload):

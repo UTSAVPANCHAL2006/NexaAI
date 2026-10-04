@@ -16,15 +16,21 @@ __pycache__/
 # OS
 .DS_Store
 
+# Web Frontend (not needed in python backend image)
+web/
+node_modules/
+.next/
+
 # Artifacts / Logs / Output
 artifacts/
 logs/
+scratch/
 graph.png
+*.log
 
 # Tests
 tests/
+.pytest_cache/
 
 # Docs
 *.md
-SYSTEM_ARCHITECTURE.md
-REDIS_IMPLEMENTATION.md

@@ -1,0 +1,416 @@
+{
+  "user_1": {
+    "customer_id": "user_1",
+    "kyc_status": "pending",
+    "risk_category": "low",
+    "tier": "partial",
+    "pan_verified": true,
+    "aadhaar_verified": false,
+    "video_kyc_completed": false,
+    "missing_documents": [
+      "aadhaar_offline_xml"
+    ],
+    "last_reviewed_on": "2026-09-02",
+    "pep_flag": false,
+    "fatca_declared": false
+  },
+  "user_2": {
+    "customer_id": "user_2",
+    "kyc_status": "under_review",
+    "risk_category": "low",
+    "tier": "partial",
+    "pan_verified": false,
+    "aadhaar_verified": true,
+    "video_kyc_completed": false,
+    "missing_documents": [],
+    "last_reviewed_on": "2026-08-03",
+    "pep_flag": false,
+    "fatca_declared": false
+  },
+  "user_3": {
+    "customer_id": "user_3",
+    "kyc_status": "verified",
+    "risk_category": "low",
+    "tier": "full",
+    "pan_verified": true,
+    "aadhaar_verified": true,
+    "video_kyc_completed": true,
+    "missing_documents": [],
+    "last_reviewed_on": "2026-09-04",
+    "pep_flag": false,
+    "fatca_declared": true
+  },
+  "user_4": {
+    "customer_id": "user_4",
+    "kyc_status": "pending",
+    "risk_category": "medium",
+    "tier": "partial",
+    "pan_verified": true,
+    "aadhaar_verified": false,
+    "video_kyc_completed": false,
+    "missing_documents": [
+      "current_address_proof"
+    ],
+    "last_reviewed_on": "2026-08-05",
+    "pep_flag": false,
+    "fatca_declared": false
+  },
+  "user_5": {
+    "customer_id": "user_5",
+    "kyc_status": "verified",
+    "risk_category": "low",
+    "tier": "full",
+    "pan_verified": true,
+    "aadhaar_verified": true,
+    "video_kyc_completed": true,
+    "missing_documents": [],
+    "last_reviewed_on": "2026-09-06",
+    "pep_flag": false,
+    "fatca_declared": false
+  },
+  "user_6": {
+    "customer_id": "user_6",
+    "kyc_status": "pending",
+    "risk_category": "low",
+    "tier": "partial",
+    "pan_verified": true,
+    "aadhaar_verified": false,
+    "video_kyc_completed": false,
+    "missing_documents": [
+      "current_address_proof"
+    ],
+    "last_reviewed_on": "2026-08-07",
+    "pep_flag": false,
+    "fatca_declared": true
+  },
+  "user_7": {
+    "customer_id": "user_7",
+    "kyc_status": "verified",
+    "risk_category": "low",
+    "tier": "full",
+    "pan_verified": false,
+    "aadhaar_verified": true,
+    "video_kyc_completed": false,
+    "missing_documents": [],
+    "last_reviewed_on": "2026-09-08",
+    "pep_flag": false,
+    "fatca_declared": false
+  },
+  "user_8": {
+    "customer_id": "user_8",
+    "kyc_status": "verified",
+    "risk_category": "medium",
+    "tier": "full",
+    "pan_verified": true,
+    "aadhaar_verified": true,
+    "video_kyc_completed": true,
+    "missing_documents": [],
+    "last_reviewed_on": "2026-08-09",
+    "pep_flag": false,
+    "fatca_declared": false
+  },
+  "user_9": {
+    "customer_id": "user_9",
+    "kyc_status": "pending",
+    "risk_category": "low",
+    "tier": "partial",
+    "pan_verified": true,
+    "aadhaar_verified": false,
+    "video_kyc_completed": false,
+    "missing_documents": [
+      "aadhaar_offline_xml"
+    ],
+    "last_reviewed_on": "2026-09-10",
+    "pep_flag": false,
+    "fatca_declared": true
+  },
+  "user_10": {
+    "customer_id": "user_10",
+    "kyc_status": "verified",
+    "risk_category": "low",
+    "tier": "full",
+    "pan_verified": true,
+    "aadhaar_verified": true,
+    "video_kyc_completed": true,
+    "missing_documents": [],
+    "last_reviewed_on": "2026-08-11",
+    "pep_flag": false,
+    "fatca_declared": false
+  },
+  "user_11": {
+    "customer_id": "user_11",
+    "kyc_status": "pending",
+    "risk_category": "low",
+    "tier": "partial",
+    "pan_verified": true,
+    "aadhaar_verified": false,
+    "video_kyc_completed": false,
+    "missing_documents": [
+      "aadhaar_offline_xml"
+    ],
+    "last_reviewed_on": "2026-09-12",
+    "pep_flag": false,
+    "fatca_declared": false
+  },
+  "user_12": {
+    "customer_id": "user_12",
+    "kyc_status": "under_review",
+    "risk_category": "medium",
+    "tier": "partial",
+    "pan_verified": false,
+    "aadhaar_verified": true,
+    "video_kyc_completed": false,
+    "missing_documents": [],
+    "last_reviewed_on": "2026-08-13",
+    "pep_flag": false,
+    "fatca_declared": true
+  },
+  "user_13": {
+    "customer_id": "user_13",
+    "kyc_status": "verified",
+    "risk_category": "low",
+    "tier": "full",
+    "pan_verified": true,
+    "aadhaar_verified": true,
+    "video_kyc_completed": true,
+    "missing_documents": [],
+    "last_reviewed_on": "2026-09-14",
+    "pep_flag": false,
+    "fatca_declared": false
+  },
+  "user_14": {
+    "customer_id": "user_14",
+    "kyc_status": "pending",
+    "risk_category": "low",
+    "tier": "partial",
+    "pan_verified": true,
+    "aadhaar_verified": false,
+    "video_kyc_completed": false,
+    "missing_documents": [
+      "current_address_proof"
+    ],
+    "last_reviewed_on": "2026-08-15",
+    "pep_flag": false,
+    "fatca_declared": false
+  },
+  "user_15": {
+    "customer_id": "user_15",
+    "kyc_status": "verified",
+    "risk_category": "low",
+    "tier": "full",
+    "pan_verified": true,
+    "aadhaar_verified": true,
+    "video_kyc_completed": true,
+    "missing_documents": [],
+    "last_reviewed_on": "2026-09-16",
+    "pep_flag": false,
+    "fatca_declared": true
+  },
+  "user_16": {
+    "customer_id": "user_16",
+    "kyc_status": "pending",
+    "risk_category": "medium",
+    "tier": "partial",
+    "pan_verified": true,
+    "aadhaar_verified": false,
+    "video_kyc_completed": false,
+    "missing_documents": [
+      "current_address_proof"
+    ],
+    "last_reviewed_on": "2026-08-17",
+    "pep_flag": false,
+    "fatca_declared": false
+  },
+  "user_17": {
+    "customer_id": "user_17",
+    "kyc_status": "under_review",
+    "risk_category": "low",
+    "tier": "partial",
+    "pan_verified": false,
+    "aadhaar_verified": true,
+    "video_kyc_completed": false,
+    "missing_documents": [],
+    "last_reviewed_on": "2026-09-18",
+    "pep_flag": false,
+    "fatca_declared": false
+  },
+  "user_18": {
+    "customer_id": "user_18",
+    "kyc_status": "verified",
+    "risk_category": "low",
+    "tier": "full",
+    "pan_verified": true,
+    "aadhaar_verified": true,
+    "video_kyc_completed": true,
+    "missing_documents": [],
+    "last_reviewed_on": "2026-08-19",
+    "pep_flag": false,
+    "fatca_declared": true
+  },
+  "user_19": {
+    "customer_id": "user_19",
+    "kyc_status": "pending",
+    "risk_category": "low",
+    "tier": "partial",
+    "pan_verified": true,
+    "aadhaar_verified": false,
+    "video_kyc_completed": false,
+    "missing_documents": [
+      "aadhaar_offline_xml"
+    ],
+    "last_reviewed_on": "2026-09-20",
+    "pep_flag": false,
+    "fatca_declared": false
+  },
+  "user_20": {
+    "customer_id": "user_20",
+    "kyc_status": "verified",
+    "risk_category": "medium",
+    "tier": "full",
+    "pan_verified": true,
+    "aadhaar_verified": true,
+    "video_kyc_completed": true,
+    "missing_documents": [],
+    "last_reviewed_on": "2026-08-21",
+    "pep_flag": false,
+    "fatca_declared": false
+  },
+  "user_21": {
+    "customer_id": "user_21",
+    "kyc_status": "pending",
+    "risk_category": "low",
+    "tier": "partial",
+    "pan_verified": true,
+    "aadhaar_verified": false,
+    "video_kyc_completed": false,
+    "missing_documents": [
+      "aadhaar_offline_xml"
+    ],
+    "last_reviewed_on": "2026-09-22",
+    "pep_flag": false,
+    "fatca_declared": true
+  },
+  "user_22": {
+    "customer_id": "user_22",
+    "kyc_status": "under_review",
+    "risk_category": "low",
+    "tier": "partial",
+    "pan_verified": false,
+    "aadhaar_verified": true,
+    "video_kyc_completed": false,
+    "missing_documents": [],
+    "last_reviewed_on": "2026-08-23",
+    "pep_flag": false,
+    "fatca_declared": false
+  },
+  "user_23": {
+    "customer_id": "user_23",
+    "kyc_status": "verified",
+    "risk_category": "low",
+    "tier": "full",
+    "pan_verified": true,
+    "aadhaar_verified": true,
+    "video_kyc_completed": true,
+    "missing_documents": [],
+    "last_reviewed_on": "2026-09-24",
+    "pep_flag": false,
+    "fatca_declared": false
+  },
+  "user_24": {
+    "customer_id": "user_24",
+    "kyc_status": "pending",
+    "risk_category": "medium",
+    "tier": "partial",
+    "pan_verified": true,
+    "aadhaar_verified": false,
+    "video_kyc_completed": false,
+    "missing_documents": [
+      "current_address_proof"
+    ],
+    "last_reviewed_on": "2026-08-25",
+    "pep_flag": false,
+    "fatca_declared": true
+  },
+  "user_25": {
+    "customer_id": "user_25",
+    "kyc_status": "verified",
+    "risk_category": "low",
+    "tier": "full",
+    "pan_verified": true,
+    "aadhaar_verified": true,
+    "video_kyc_completed": true,
+    "missing_documents": [],
+    "last_reviewed_on": "2026-09-26",
+    "pep_flag": false,
+    "fatca_declared": false
+  },
+  "user_26": {
+    "customer_id": "user_26",
+    "kyc_status": "pending",
+    "risk_category": "low",
+    "tier": "partial",
+    "pan_verified": true,
+    "aadhaar_verified": false,
+    "video_kyc_completed": false,
+    "missing_documents": [
+      "current_address_proof"
+    ],
+    "last_reviewed_on": "2026-08-27",
+    "pep_flag": false,
+    "fatca_declared": false
+  },
+  "user_27": {
+    "customer_id": "user_27",
+    "kyc_status": "under_review",
+    "risk_category": "low",
+    "tier": "partial",
+    "pan_verified": false,
+    "aadhaar_verified": true,
+    "video_kyc_completed": false,
+    "missing_documents": [],
+    "last_reviewed_on": "2026-09-01",
+    "pep_flag": false,
+    "fatca_declared": true
+  },
+  "user_28": {
+    "customer_id": "user_28",
+    "kyc_status": "verified",
+    "risk_category": "medium",
+    "tier": "full",
+    "pan_verified": true,
+    "aadhaar_verified": true,
+    "video_kyc_completed": true,
+    "missing_documents": [],
+    "last_reviewed_on": "2026-08-02",
+    "pep_flag": false,
+    "fatca_declared": false
+  },
+  "user_29": {
+    "customer_id": "user_29",
+    "kyc_status": "pending",
+    "risk_category": "low",
+    "tier": "partial",
+    "pan_verified": true,
+    "aadhaar_verified": false,
+    "video_kyc_completed": false,
+    "missing_documents": [
+      "aadhaar_offline_xml"
+    ],
+    "last_reviewed_on": "2026-09-03",
+    "pep_flag": false,
+    "fatca_declared": false
+  },
+  "user_30": {
+    "customer_id": "user_30",
+    "kyc_status": "verified",
+    "risk_category": "low",
+    "tier": "full",
+    "pan_verified": true,
+    "aadhaar_verified": true,
+    "video_kyc_completed": true,
+    "missing_documents": [],
+    "last_reviewed_on": "2026-08-04",
+    "pep_flag": false,
+    "fatca_declared": true
+  }
+}
