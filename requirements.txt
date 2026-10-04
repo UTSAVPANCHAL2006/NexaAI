@@ -11,4 +11,4 @@ fastapi
 uvicorn
 redis
 langgraph-checkpoint-redis
-qdrant-clien
+qdrant-client
