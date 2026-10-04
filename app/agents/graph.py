@@ -8,10 +8,8 @@ from app.agents.nodes.guard_node import GuardNode
 
 
 from app.agents.router import router
-from langgraph.checkpoint.redis import RedisSaver
-from app.config.config import REDIS_URL
+from langgraph.checkpoint.memory import MemorySaver
 from langchain_core.messages import HumanMessage
-import uuid
 
 
 
@@ -37,9 +35,9 @@ class AgentGraph:
         self.graph_builder.add_edge("generator", END)
 
         
-        # connect to redis and use it to save conversation memory
-        memory = RedisSaver(REDIS_URL)
-        memory.setup() # Automatically create missing RediSearch indexes
+        # In-process memory: works on any Redis provider (no FT.* required)
+        # State persists for the lifetime of the server process per thread_id.
+        memory = MemorySaver()
         self.graph = self.graph_builder.compile(checkpointer=memory)
         
         
