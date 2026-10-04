@@ -2,7 +2,6 @@ langchain
 langchain-community
 langchain-core
 langchain-openai
-fastembed
 langchain-qdrant
 rank-bm25
 langfuse
@@ -10,7 +9,6 @@ langgraph
 python-dotenv
 fastapi
 uvicorn
-streamlit
 redis
 langgraph-checkpoint-redis
-deepeval
+qdrant-clien

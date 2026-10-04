@@ -21,12 +21,12 @@ RESOLVED_TICKETS_FILE = (
 CHUNK_SIZE=500
 CHUNK_OVERLAP = 100
 
-EMBEDDING_MODEL = "BAAI/bge-base-en-v1.5"
+EMBEDDING_MODEL = "text-embedding-3-small"  # OpenAI cloud API — zero local RAM
 
 QDRANT_URL        = os.getenv("QDRANT_URL", "http://localhost:6333")
 QDRANT_API_KEY    = os.getenv("QDRANT_API_KEY", None)
 QDRANT_COLLECTION = os.getenv("QDRANT_COLLECTION", "banking_support")
-VECTOR_SIZE       = 768
+VECTOR_SIZE       = 1536  # text-embedding-3-small output dimensions
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
